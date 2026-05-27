@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metrical Poetry — Hamsanandi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+Kannada:wght@400;600&family=Noto+Serif+Kannada:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold: #6b4400; --gold-light: #4a2e00; --gold-dim: #c49030;
+  --bg: #ffffff; --section-bg: #fdf8f0; --header-bg: #f5e8cc;
+  --border: #e0c88a; --border-light: #c9a850;
+  --text: #1a1208; --meta: #7a5c20;
+  --accent: #6b4400; --accent-mid: #c49030; --accent-light: #e8c87a;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'EB Garamond', serif;
+  background: var(--bg); color: var(--text);
+  max-width: 860px; margin: 0 auto;
+  padding: 0 0 40px; font-size: 16px; line-height: 1.6;
+}
+
+/* ── Header ── */
+.page-header {
+  text-align: center; padding: 28px 20px 20px;
+  border-bottom: 1px solid var(--border); position: relative;
+}
+.page-header::after {
+  content: ''; display: block; height: 2px; width: 120px; margin: 0 auto;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%);
+}
+.page-title {
+  font-family: 'Cinzel', serif; font-size: 1.5rem;
+  letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase;
+}
+.page-title.kn {
+  font-family: 'Noto Serif Kannada', serif; letter-spacing: 0.05em;
+  text-transform: none;
+}
+.page-subtitle { font-size: 0.95em; color: var(--gold-dim); margin-top: 5px; }
+.page-subtitle.en { font-style: italic; }
+.page-subtitle.kn { font-family: 'Noto Sans Kannada', sans-serif; }
+
+/* ── Lang toggle ── */
+.lang-toggle {
+  position: absolute; top: 20px; right: 20px;
+  background: var(--header-bg); border: 1px solid var(--border-light);
+  border-radius: 20px; padding: 5px 4px; display: flex; gap: 3px;
+}
+.lang-btn {
+  font-size: 0.75rem; padding: 4px 10px; border-radius: 16px;
+  border: none; background: none; cursor: pointer; color: var(--meta);
+  font-family: 'EB Garamond', serif; transition: all 0.18s;
+}
+.lang-btn.active { background: var(--gold); color: #fff; font-weight: 600; }
+.lang-btn.kn-btn { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.8rem; }
+
+/* ── Intro ── */
+.intro {
+  max-width: 680px; margin: 18px auto 0;
+  font-size: 1em; line-height: 1.75; padding: 0 20px;
+}
+.intro.kn { font-family: 'Noto Sans Kannada', sans-serif; }
+
+/* ── Archive root ── */
+#archiveRoot { padding: 0 20px; margin-top: 24px; }
+
+/* ── Summary table ── */
+.summary-table-wrap {
+  margin: 0 0 4px; background: var(--section-bg);
+  border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+}
+.summary-table { width: 100%; border-collapse: collapse; font-size: 0.86em; }
+.summary-table thead tr { background: var(--header-bg); }
+.summary-table th {
+  font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--meta);
+  padding: 7px 10px; text-align: left;
+  border-bottom: 1px solid var(--border); white-space: nowrap;
+}
+.summary-table th.kn {
+  font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.75rem;
+  letter-spacing: 0.05em; text-transform: none;
+}
+.summary-table td {
+  padding: 6px 10px; border-bottom: 1px solid var(--border);
+  vertical-align: middle; line-height: 1.35;
+}
+.summary-table tr:last-child td { border-bottom: none; }
+.summary-table tbody tr { cursor: pointer; transition: background 0.12s; }
+.summary-table tbody tr:hover { background: var(--header-bg); }
+.st-num { text-align: center; color: var(--meta); font-size: 0.82em; }
+.st-title {
+  font-family: 'Noto Serif Kannada', serif; font-size: 0.98em;
+  color: var(--gold-light); font-weight: 600;
+}
+.st-roman {
+  font-family: 'EB Garamond', serif; font-size: 0.82em;
+  color: var(--meta); font-style: italic; display: block; margin-top: 1px;
+}
+.st-metre {
+  display: inline-block; padding: 1px 8px; font-size: 0.72em;
+  border-radius: 3px; white-space: nowrap;
+  font-family: 'Noto Sans Kannada', sans-serif;
+  background: var(--accent-light); color: var(--gold-light);
+  border: 1px solid var(--border-light);
+}
+.st-badge {
+  display: inline-block; padding: 1px 7px; font-size: 0.72em;
+  border-radius: 3px; font-family: 'EB Garamond', serif;
+  letter-spacing: 0.04em; margin-right: 3px; white-space: nowrap;
+}
+.badge-text { background: var(--gold); color: #fff; }
+.badge-audio { background: #e8f0e0; border: 1px solid #a8c890; color: #3a6020; }
+
+/* ── Coming soon ── */
+.cs-wrap {
+  margin: 14px 0 4px; border: 1px dashed var(--border-light);
+  border-radius: 6px; overflow: hidden; background: var(--bg);
+}
+.cs-header {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--header-bg); padding: 7px 12px;
+  cursor: pointer; user-select: none; border-bottom: 1px dashed var(--border);
+}
+.cs-header-text {
+  font-family: 'Cinzel', serif; font-size: 0.6rem;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--meta);
+}
+.cs-header-text.kn {
+  font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.82rem;
+  letter-spacing: 0.05em; text-transform: none;
+}
+.cs-header:hover .cs-header-text { color: var(--gold-dim); }
+.cs-count { font-size: 0.72em; color: var(--border-light); font-family: 'EB Garamond', serif; }
+.cs-body { display: none; }
+.cs-table { width: 100%; border-collapse: collapse; font-size: 0.84em; }
+.cs-table td {
+  padding: 5px 10px; border-bottom: 1px dashed var(--border);
+  vertical-align: middle; color: var(--meta);
+}
+.cs-table tr:last-child td { border-bottom: none; }
+.cs-num { text-align: center; width: 4%; font-size: 0.8em; }
+.cs-title { font-family: 'Noto Serif Kannada', serif; font-size: 0.95em; color: var(--text); }
+.cs-roman { font-family: 'EB Garamond', serif; font-size: 0.82em; font-style: italic; color: var(--meta); display: block; }
+.cs-metre { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.8rem; }
+.badge-soon {
+  background: #fef3cd; border: 1px solid #e8c84a; color: #7a6000;
+  padding: 1px 7px; font-size: 0.72em; border-radius: 3px;
+  font-family: 'EB Garamond', serif; white-space: nowrap;
+}
+
+/* ── Detail toggle ── */
+.section-toggle {
+  display: flex; align-items: center; gap: 8px;
+  font-family: 'Cinzel', serif; font-size: 0.65rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold-light); cursor: pointer; padding: 6px 0 4px;
+  user-select: none; margin-top: 8px;
+}
+.section-toggle.kn {
+  font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.88rem;
+  letter-spacing: 0.05em; text-transform: none;
+}
+.section-toggle:hover { color: var(--gold); }
+.toggle-arrow { font-size: 0.7rem; transition: transform 0.2s; }
+.toggle-arrow.open { transform: rotate(90deg); }
+.detail-section { overflow: hidden; }
+
+/* ── Poem entries ── */
+.poem {
+  padding: 12px 14px; border-radius: 6px;
+  transition: background 0.15s; margin: 2px 0;
+}
+.poem:hover { background: var(--header-bg); }
+.poem-title {
+  font-family: 'Noto Serif Kannada', serif; font-size: 1.1rem;
+  font-weight: 600; color: var(--gold-light); text-decoration: none; display: block;
+}
+.poem-title:hover { text-decoration: underline; }
+.poem-roman {
+  font-family: 'EB Garamond', serif; font-size: 0.9rem;
+  font-style: italic; color: var(--meta); margin-top: 1px;
+}
+.poem-meta {
+  font-size: 0.85em; color: var(--meta); margin-top: 4px;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.metre-badge {
+  display: inline-block; padding: 2px 9px; font-size: 0.75em;
+  border: 1px solid var(--border-light); border-radius: 4px;
+  color: var(--gold-light); background: var(--accent-light);
+  font-family: 'Noto Sans Kannada', sans-serif;
+}
+.play-btn {
+  display: inline-block; margin-top: 6px; margin-right: 6px;
+  padding: 4px 10px; font-size: 0.85em; border: 1px solid var(--border-light);
+  border-radius: 4px; background: white; cursor: pointer;
+  font-family: 'EB Garamond', serif; color: var(--gold-light);
+  text-decoration: none;
+}
+.play-btn:hover { background: var(--header-bg); }
+.text-btn {
+  background: var(--gold); color: #fff; border-color: var(--gold); font-weight: 600;
+}
+.text-btn:hover { background: var(--gold-light); border-color: var(--gold-light); }
+.audio-embed { display: none; margin-top: 10px; }
+.audio-embed iframe { width: 100%; max-width: 480px; height: 260px; border: none; border-radius: 6px; }
+
+/* ── About & footer ── */
+.about-section {
+  max-width: 680px; margin: 36px auto 0;
+  padding: 0 20px; line-height: 1.8; font-size: 1em;
+}
+.about-section.kn { font-family: 'Noto Sans Kannada', sans-serif; }
+.about-title {
+  font-family: 'Cinzel', serif; font-size: 1rem; letter-spacing: 0.15em;
+  color: var(--gold); text-transform: uppercase; margin-bottom: 14px; text-align: center;
+}
+.about-title.kn {
+  font-family: 'Noto Serif Kannada', serif; letter-spacing: 0.05em; text-transform: none;
+}
+a { text-decoration: none; color: var(--gold-light); }
+a:hover { text-decoration: underline; }
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 32px 20px 0;
+}
+footer { text-align: center; color: var(--meta); margin-top: 20px; font-size: 0.82em; }
+footer.kn { font-family: 'Noto Sans Kannada', sans-serif; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="lang-toggle" id="langToggle">
+    <button class="lang-btn active" id="btnEN">EN</button>
+    <button class="lang-btn kn-btn" id="btnKN">ಕನ್ನಡ</button>
+  </div>
+  <div class="page-title" id="pageTitle">Metrical Poetry</div>
+  <div class="page-subtitle en" id="pageSubtitle">Original Kannada verse in classical metres</div>
+</div>
+
+<p class="intro" id="introText">Original Kannada poetry in classical metres — shatpadi, tripadi, chatushpadi, ragale, and related forms. All compositions are in Kannada.</p>
+
+<div id="archiveRoot"></div>
+
+<hr class="section-divider">
+<section class="about-section" id="aboutSection">
+  <div class="about-title" id="aboutTitle">About the Poet</div>
+  <p id="aboutText">Ramaprasad KV writes original Kannada verse in classical metres, drawing on the Vachana, Dasa, and classical Sanskrit-Kannada literary traditions. This archive brings together compositions in shatpadi, chatushpadi, and related forms.</p>
+  <p style="margin-top:10px;">Instagram: <a href="https://www.instagram.com/hamsanandi" target="_blank">@hamsanandi</a></p>
+</section>
+<footer id="footerEl">Hosted on GitHub Pages</footer>
+
+<script>
+const STR = {
+  en: {
+    pageTitle: "Metrical Poetry", pageTitleClass: "page-title",
+    pageSubtitle: "Original Kannada verse in classical metres",
+    pageSubtitleClass: "page-subtitle en",
+    intro: "Original Kannada poetry in classical metres — shatpadi, tripadi, chatushpadi, ragale, and related forms. All compositions are in Kannada.",
+    introClass: "intro",
+    colTitle: "Title", colAvail: "Available",
+    csLabel: "Coming Soon", csSoon: "Coming soon", csBadgeClass: "badge-soon",
+    showDetail: "Show full entries ▸", hideDetail: "Hide full entries ▴",
+    toggleClass: "section-toggle",
+    textBtn: "Read",
+    aboutTitle: "About the Poet", aboutTitleClass: "about-title",
+    aboutSectionClass: "about-section",
+    aboutText: "Ramaprasad KV writes original Kannada verse in classical metres, drawing on the Vachana, Dasa, and classical Sanskrit-Kannada literary traditions. This archive brings together compositions in shatpadi, chatushpadi, and related forms.",
+    footer: "Hosted on GitHub Pages", footerClass: ""
+  },
+  kn: {
+    pageTitle: "ಛಂದೋಬದ್ಧ ಕಾವ್ಯ", pageTitleClass: "page-title kn",
+    pageSubtitle: "ಶಾಸ್ತ್ರೀಯ ಛಂದಸ್ಸಿನಲ್ಲಿ ಮೂಲ ಕನ್ನಡ ಕಾವ್ಯ",
+    pageSubtitleClass: "page-subtitle kn",
+    intro: "ಷಟ್ಪದಿ, ತ್ರಿಪದಿ, ಚೌಪದಿ, ರಗಳೆ ಮತ್ತು ಇತರ ಶಾಸ್ತ್ರೀಯ ಛಂದಸ್ಸುಗಳಲ್ಲಿ ಮೂಲ ಕನ್ನಡ ಕಾವ್ಯ.",
+    introClass: "intro kn",
+    colTitle: "ರಚನೆ", colAvail: "ಲಭ್ಯ",
+    csLabel: "ಸದ್ಯದಲ್ಲೇ ಬರಲಿವೆ", csSoon: "ಶೀಘ್ರದಲ್ಲಿ", csBadgeClass: "badge-soon",
+    showDetail: "ಪೂರ್ಣ ವಿವರ ನೋಡಿ ▸", hideDetail: "ಮರೆಮಾಡಿ ▴",
+    toggleClass: "section-toggle kn",
+    textBtn: "ಓದಿ",
+    aboutTitle: "ಕವಿಯ ಕುರಿತು", aboutTitleClass: "about-title kn",
+    aboutSectionClass: "about-section kn",
+    aboutText: "ರಾಮಪ್ರಸಾದ್ ಕೆ.ವಿ. ಅವರು ವಚನ, ದಾಸ ಮತ್ತು ಶಾಸ್ತ್ರೀಯ ಸಂಸ್ಕೃತ-ಕನ್ನಡ ಸಾಹಿತ್ಯ ಪರಂಪರೆಯಿಂದ ಪ್ರೇರಣೆ ಪಡೆದು ಶಾಸ್ತ್ರೀಯ ಛಂದಸ್ಸಿನಲ್ಲಿ ಮೂಲ ಕನ್ನಡ ಕಾವ್ಯ ರಚಿಸುತ್ತಾರೆ.",
+    footer: "GitHub Pages ನಲ್ಲಿ ಪ್ರಕಾಶಿತ", footerClass: "kn"
+  }
+};
+
+/* ===================== DATA =====================
+   status: "live" | "coming-soon"
+   kn:     { title, roman }        — Kannada title + romanized
+   metre:  "ಷಟ್ಪದಿ" | "ಚೌಪದಿ" | "ತ್ರಿಪದಿ" | "ರಗಳೆ" | "" (optional)
+   file:   filename (live only)
+   youtube: [ { label, id } ]       (optional)
+
+   TO ADD A NEW ENTRY:
+     { status:"live", kn:{ title:"ಶೀರ್ಷಿಕೆ", roman:"Title" },
+       metre:"ಷಟ್ಪದಿ", file:"filename.html" },
+
+   TO ADD COMING SOON:
+     { status:"coming-soon", kn:{ title:"ಶೀರ್ಷಿಕೆ", roman:"Title" }, metre:"" },
+*/
+const DATA = [
+
+  /* ── Live entries ── */
+  { status:"live",
+    kn:{ title:"ಪಂಚವಟಿಯಲ್ಲಿ ಮೊದಲ ದಿನ", roman:"Pañcavatiyalli modala dina" },
+    metre:"ಚೌಪದಿ", file:"panchavatiyalli_modala_dina.html" },
+
+  { status:"live",
+    kn:{ title:"ಪಂಚವಟಿಯಲ್ಲಿ ಕೊನೆಯ ದಿನ", roman:"Pañcavatiyalli koṇeya dina" },
+    metre:"ಚೌಪದಿ", file:"panchavatiyalli_koneya_dina.html" },
+
+  { status:"live",
+    kn:{ title:"ಕನಕಧಾರಾ ಸ್ತೋತ್ರ", roman:"Kanakadhārā Stotra" },
+    metre:"ಷಟ್ಪದಿ", file:"kanakadhara_stotra.html" },
+
+  { status:"live",
+    kn:{ title:"ಸಂಪೂರ್ಣ ಸಂಕ್ಷಿಪ್ತ ರಾಮಾಯಣ", roman:"Sampūrṇa Saṅkṣipta Rāmāyaṇa" },
+    metre:"ಷಟ್ಪದಿ", file:"sampoorna_sankshipta_ramayana.html" },
+
+  { status:"live",
+    kn:{ title:"ಪುರಂದರದಾಸರ ಕಥೆ", roman:"Purandaradāsara Kathe" },
+    metre:"ಷಟ್ಪದಿ", file:"purandaradasara_kathe.html" },
+
+  { status:"live",
+    kn:{ title:"ಸೀತಾ ಕಲ್ಯಾಣ", roman:"Sītā Kalyāṇa" },
+    metre:"ಚೌಪದಿ", file:"seeta_kalyana.html" },
+
+  /* ── Coming soon ── */
+  { status:"coming-soon",
+    kn:{ title:"ಹನುಮ ಚರಿತ", roman:"Hanuma Charita" },
+    metre:"ಷಟ್ಪದಿ" },
+
+  { status:"coming-soon",
+    kn:{ title:"ಶ್ರೀ ಕೃಷ್ಣ ಲೀಲಾ", roman:"Śrī Kṛṣṇa Līlā" },
+    metre:"" }
+];
+
+let lang = 'en';
+
+/* ── Build summary table ── */
+function buildSummaryTable(items, s) {
+  const wrap = document.createElement('div');
+  wrap.className = 'summary-table-wrap';
+  const tbl = document.createElement('table');
+  tbl.className = 'summary-table';
+  const thead = document.createElement('thead');
+  const thClass = lang === 'kn' ? ' kn' : '';
+  thead.innerHTML = `<tr>
+    <th style="width:4%;text-align:center;" class="${thClass.trim()}">#</th>
+    <th style="width:76%;" class="${thClass.trim()}">${s.colTitle}</th>
+    <th style="width:20%;" class="${thClass.trim()}">${s.colAvail}</th>
+  </tr>`;
+  tbl.appendChild(thead);
+  const tbody = document.createElement('tbody');
+  items.forEach((c, i) => {
+    const tr = document.createElement('tr');
+    tr.dataset.target = `poem-item-${i}`;
+    const textBadge = `<span class="st-badge badge-text">${s.textBtn}</span>`;
+    const audBadge  = c.youtube && c.youtube.length
+      ? `<span class="st-badge badge-audio">${lang==='kn'?'ಧ್ವನಿ':'Audio'}</span>` : '';
+    tr.innerHTML = `
+      <td class="st-num">${i+1}</td>
+      <td>
+        <span class="st-title">${c.kn.title}</span>
+        <span class="st-roman">${c.kn.roman}</span>
+      </td>
+      <td>${textBadge}${audBadge}</td>`;
+    tr.addEventListener('click', () => {
+      const target = document.getElementById(`poem-item-${i}`);
+      if (!target) return;
+      const det = target.closest('.detail-section');
+      if (det && det.style.display === 'none') {
+        det.style.display = 'block';
+        const tog = det.previousElementSibling;
+        if (tog && tog.classList.contains('section-toggle')) {
+          tog.dataset.open = '1';
+          tog.querySelector('.toggle-arrow').classList.add('open');
+          const sp = tog.querySelectorAll('span:not(.toggle-arrow)');
+          sp[0].textContent = s.hideDetail.replace(' ▴','');
+          sp[1].textContent = ' ▴';
+        }
+      }
+      setTimeout(() => target.scrollIntoView({behavior:'smooth', block:'start'}), 50);
+      target.style.background = 'var(--header-bg)';
+      setTimeout(() => target.style.background = '', 1500);
+    });
+    tbody.appendChild(tr);
+  });
+  tbl.appendChild(tbody);
+  wrap.appendChild(tbl);
+  return wrap;
+}
+
+/* ── Build coming-soon table ── */
+function buildComingSoonTable(items, s) {
+  const wrap = document.createElement('div');
+  wrap.className = 'cs-wrap';
+  const hdr = document.createElement('div');
+  hdr.className = 'cs-header';
+  hdr.innerHTML = `<span class="toggle-arrow" style="font-size:0.65rem;color:var(--meta);">▶</span>
+    <span class="cs-header-text${lang==='kn'?' kn':''}">${s.csLabel}</span>
+    <span class="cs-count">(${items.length})</span>`;
+  wrap.appendChild(hdr);
+  const body = document.createElement('div');
+  body.className = 'cs-body';
+  const tbl = document.createElement('table');
+  tbl.className = 'cs-table';
+  const tbody = document.createElement('tbody');
+  items.forEach((c, i) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="cs-num">${i+1}</td>
+      <td class="cs-title">${c.kn.title}<span class="cs-roman">${c.kn.roman}</span></td>
+      <td><span class="${s.csBadgeClass}">${s.csSoon}</span></td>`;
+    tbody.appendChild(tr);
+  });
+  tbl.appendChild(tbody);
+  body.appendChild(tbl);
+  wrap.appendChild(body);
+  hdr.addEventListener('click', () => {
+    const open = body.style.display === 'block';
+    body.style.display = open ? 'none' : 'block';
+    hdr.querySelector('.toggle-arrow').classList.toggle('open', !open);
+  });
+  return wrap;
+}
+
+/* ── Build full poem entry ── */
+function buildPoem(c, itemId, s) {
+  const wrap = document.createElement('div');
+  wrap.className = 'poem';
+  wrap.id = itemId;
+  const titleEl = document.createElement('a');
+  titleEl.href = c.file;
+  titleEl.className = 'poem-title';
+  titleEl.textContent = c.kn.title;
+  wrap.appendChild(titleEl);
+  const romanEl = document.createElement('div');
+  romanEl.className = 'poem-roman';
+  romanEl.textContent = c.kn.roman;
+  wrap.appendChild(romanEl);
+  if (c.metre) {
+    const metaEl = document.createElement('div');
+    metaEl.className = 'poem-meta';
+    metaEl.innerHTML = `<span class="metre-badge">${c.metre}</span>`;
+    wrap.appendChild(metaEl);
+  }
+  const readBtn = document.createElement('a');
+  readBtn.href = c.file;
+  readBtn.className = 'play-btn text-btn';
+  readBtn.style.cssText = 'display:inline-block;margin-top:6px;margin-right:6px;';
+  readBtn.textContent = s.textBtn;
+  wrap.appendChild(readBtn);
+  if (c.youtube) {
+    c.youtube.forEach(v => {
+      const btn = document.createElement('button');
+      btn.className = 'play-btn';
+      btn.textContent = '▶ ' + v.label;
+      const embed = document.createElement('div');
+      embed.className = 'audio-embed';
+      const iframe = document.createElement('iframe');
+      iframe.dataset.src = 'https://www.youtube.com/embed/' + v.id;
+      embed.appendChild(iframe);
+      btn.onclick = () => {
+        document.querySelectorAll('.audio-embed').forEach(a => {
+          a.style.display = 'none';
+          const f = a.querySelector('iframe'); if (f) f.src = '';
+        });
+        embed.style.display = 'block'; iframe.src = iframe.dataset.src;
+      };
+      wrap.appendChild(btn); wrap.appendChild(embed);
+    });
+  }
+  return wrap;
+}
+
+/* ── Render ── */
+function render(l) {
+  const s = STR[l];
+  const root = document.getElementById('archiveRoot');
+  root.innerHTML = '';
+
+  const liveItems = DATA.filter(c => c.status === 'live');
+  const csItems   = DATA.filter(c => c.status === 'coming-soon');
+
+  // Summary table
+  if (liveItems.length) root.appendChild(buildSummaryTable(liveItems, s));
+
+  // Coming soon
+  if (csItems.length) root.appendChild(buildComingSoonTable(csItems, s));
+
+  // Detail toggle + full entries
+  if (liveItems.length) {
+    const toggle = document.createElement('div');
+    toggle.className = s.toggleClass;
+    toggle.dataset.open = '1';
+    toggle.innerHTML = `<span class="toggle-arrow open">▶</span><span>${s.hideDetail.replace(' ▴','')}</span><span> ▴</span>`;
+    root.appendChild(toggle);
+
+    const detail = document.createElement('div');
+    detail.className = 'detail-section';
+    detail.style.display = 'block';
+    liveItems.forEach((c, i) => detail.appendChild(buildPoem(c, `poem-item-${i}`, s)));
+    root.appendChild(detail);
+
+    toggle.addEventListener('click', () => {
+      const open = toggle.dataset.open === '1';
+      toggle.dataset.open = open ? '0' : '1';
+      detail.style.display = open ? 'none' : 'block';
+      toggle.querySelector('.toggle-arrow').classList.toggle('open', !open);
+      const sp = toggle.querySelectorAll('span:not(.toggle-arrow)');
+      sp[0].textContent = open ? s.showDetail.replace(' ▸','') : s.hideDetail.replace(' ▴','');
+      sp[1].textContent = open ? ' ▸' : ' ▴';
+    });
+  }
+}
+
+function applyLang(l) {
+  lang = l;
+  const s = STR[l];
+  document.getElementById('pageTitle').textContent    = s.pageTitle;
+  document.getElementById('pageTitle').className      = s.pageTitleClass;
+  document.getElementById('pageSubtitle').textContent = s.pageSubtitle;
+  document.getElementById('pageSubtitle').className   = s.pageSubtitleClass;
+  document.getElementById('introText').textContent    = s.intro;
+  document.getElementById('introText').className      = s.introClass;
+  document.getElementById('aboutTitle').textContent   = s.aboutTitle;
+  document.getElementById('aboutTitle').className     = s.aboutTitleClass;
+  document.getElementById('aboutSection').className   = s.aboutSectionClass;
+  document.getElementById('aboutText').textContent    = s.aboutText;
+  document.getElementById('footerEl').textContent     = s.footer;
+  document.getElementById('footerEl').className       = 'footer ' + (s.footerClass || '');
+  document.getElementById('btnEN').classList.toggle('active', l === 'en');
+  document.getElementById('btnKN').classList.toggle('active', l === 'kn');
+  render(l);
+}
+
+document.getElementById('langToggle').addEventListener('click', e => {
+  const btn = e.target.closest('.lang-btn');
+  if (!btn) return;
+  applyLang(btn.id === 'btnKN' ? 'kn' : 'en');
+});
+
+applyLang('en');
+</script>
+</body>
+</html>
