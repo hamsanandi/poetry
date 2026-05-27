@@ -296,52 +296,52 @@ const STR = {
 /* ===================== DATA =====================
    status: "live" | "coming-soon"
    kn:     { title, roman }        — Kannada title + romanized
-   metre:  "ಷಟ್ಪದಿ" | "ಚೌಪದಿ" | "ತ್ರಿಪದಿ" | "ರಗಳೆ" | "" (optional)
+   tags:   ["ಷಟ್ಪದಿ", "ಕೃಷ್ಣ", ...]   — optional array of tags shown on the entry
    file:   filename (live only)
-   youtube: [ { label, id } ]       (optional)
+   youtube: [ { label, id } ]   (optional)
 
    TO ADD A NEW ENTRY:
      { status:"live", kn:{ title:"ಶೀರ್ಷಿಕೆ", roman:"Title" },
-       metre:"ಷಟ್ಪದಿ", file:"filename.html" },
+       tags:["ಷಟ್ಪದಿ"], file:"filename.html" },
 
    TO ADD COMING SOON:
-     { status:"coming-soon", kn:{ title:"ಶೀರ್ಷಿಕೆ", roman:"Title" }, metre:"" },
+     { status:"coming-soon", kn:{ title:"ಶೀರ್ಷಿಕೆ", roman:"Title" } },
 */
 const DATA = [
 
   /* ── Live entries ── */
   { status:"live",
     kn:{ title:"ಪಂಚವಟಿಯಲ್ಲಿ ಮೊದಲ ದಿನ", roman:"Pañcavatiyalli modala dina" },
-    metre:"ಚೌಪದಿ", file:"panchavatiyalli_modala_dina.html" },
+    tags:["ರಾಮಾಯಣ"], file:"panchavatiyalli_modala_dina.html" },
 
   { status:"live",
     kn:{ title:"ಪಂಚವಟಿಯಲ್ಲಿ ಕೊನೆಯ ದಿನ", roman:"Pañcavatiyalli koṇeya dina" },
-    metre:"ಚೌಪದಿ", file:"panchavatiyalli_koneya_dina.html" },
+    tags:["ರಾಮಾಯಣ"], file:"panchavatiyalli_koneya_dina.html" },
 
   { status:"live",
     kn:{ title:"ಕನಕಧಾರಾ ಸ್ತೋತ್ರ", roman:"Kanakadhārā Stotra" },
-    metre:"ಷಟ್ಪದಿ", file:"kanakadhara_stotra.html" },
+    tags:["ಆದಿಶಂಕರ "], file:"kanakadhara_stotra.html" },
 
   { status:"live",
     kn:{ title:"ಸಂಪೂರ್ಣ ಸಂಕ್ಷಿಪ್ತ ರಾಮಾಯಣ", roman:"Sampūrṇa Saṅkṣipta Rāmāyaṇa" },
-    metre:"ಷಟ್ಪದಿ", file:"sampoorna_sankshipta_ramayana.html" },
+    tags:["ಮಲ್ಲಿಕಾಮಾಲೆ"], file:"sampoorna_sankshipta_ramayana.html" },
 
   { status:"live",
     kn:{ title:"ಪುರಂದರದಾಸರ ಕಥೆ", roman:"Purandaradāsara Kathe" },
-    metre:"ಷಟ್ಪದಿ", file:"purandaradasara_kathe.html" },
+    tags:["ಮಲ್ಲಿಕಾಮಾಲೆ"], file:"purandaradasara_kathe.html" },
 
   { status:"live",
     kn:{ title:"ಸೀತಾ ಕಲ್ಯಾಣ", roman:"Sītā Kalyāṇa" },
-    metre:"ಚೌಪದಿ", file:"seeta_kalyana.html" },
+    tags:["ಭಾಮಿನಿಷಟ್ಪದಿ"], file:"seeta_kalyana.html" },
 
   /* ── Coming soon ── */
   { status:"coming-soon",
-    kn:{ title:"ಹನುಮ ಚರಿತ", roman:"Hanuma Charita" },
-    metre:"ಷಟ್ಪದಿ" },
+    kn:{ title:"ದಶಾವತಾರ ಸ್ತುತಿ", roman:"Hanuma Charita" },
+    },
 
   { status:"coming-soon",
     kn:{ title:"ಶ್ರೀ ಕೃಷ್ಣ ಲೀಲಾ", roman:"Śrī Kṛṣṇa Līlā" },
-    metre:"" }
+    }
 ];
 
 let lang = 'en';
@@ -448,10 +448,10 @@ function buildPoem(c, itemId, s) {
   romanEl.className = 'poem-roman';
   romanEl.textContent = c.kn.roman;
   wrap.appendChild(romanEl);
-  if (c.metre) {
+  if (c.tags && c.tags.length) {
     const metaEl = document.createElement('div');
     metaEl.className = 'poem-meta';
-    metaEl.innerHTML = `<span class="metre-badge">${c.metre}</span>`;
+    metaEl.innerHTML = c.tags.map(t => `<span class="metre-badge">${t}</span>`).join('');
     wrap.appendChild(metaEl);
   }
   const readBtn = document.createElement('a');
