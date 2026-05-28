@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ಪಂಚವಟಿಯಲ್ಲಿ ಮೊದಲ ದಿನ — ಹಂಸಾನಂದಿ</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+Kannada:wght@400;600&family=Noto+Serif+Kannada:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold: #6b4400; --gold-light: #4a2e00; --gold-dim: #c49030;
+  --bg: #ffffff; --section-bg: #fdf8f0; --header-bg: #f5e8cc;
+  --border: #e0c88a; --border-light: #c9a850;
+  --text: #1a1208; --meta: #7a5c20;
+  --accent-light: #e8c87a;
+}
+body {
+  font-family: 'Noto Serif Kannada', serif;
+  background: var(--bg); color: var(--text);
+  max-width: 680px; margin: 0 auto;
+  padding: 0 24px 60px; font-size: 16px; line-height: 1.75;
+}
+
+/* ── Nav ── */
+.breadcrumb {
+  padding: 16px 0 0;
+  font-family: 'Cinzel', serif; font-size: 0.7rem;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--meta);
+}
+.breadcrumb a { color: var(--gold-dim); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; color: var(--gold); }
+.breadcrumb span { margin: 0 6px; }
+
+/* ── Header ── */
+.poem-header {
+  text-align: center; padding: 28px 0 24px;
+  border-bottom: 1px solid var(--border); position: relative; margin-top: 8px;
+}
+.poem-header::after {
+  content: ''; display: block; height: 2px; width: 100px; margin: 0 auto;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%);
+}
+.poem-title {
+  font-family: 'Noto Serif Kannada', serif; font-size: 1.6rem; font-weight: 600;
+  color: var(--gold-light); line-height: 1.35; margin-bottom: 6px;
+}
+.poem-title-roman {
+  font-family: 'EB Garamond', serif; font-size: 1rem; font-style: italic;
+  color: var(--meta); margin-bottom: 14px;
+}
+.poem-tags { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+.tag {
+  display: inline-block; padding: 2px 10px;
+  font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.75rem;
+  border: 1px solid var(--border-light); border-radius: 4px;
+  color: var(--gold-light); background: var(--accent-light);
+}
+
+/* ── Context note ── */
+.context {
+  margin: 24px 0 0; padding: 14px 18px;
+  background: var(--section-bg); border-left: 3px solid var(--gold-dim);
+  border-radius: 0 5px 5px 0;
+  font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.88rem;
+  color: var(--meta); line-height: 1.8;
+}
+.context-en {
+  margin-top: 8px;
+  font-family: 'EB Garamond', serif; font-size: 0.88rem; font-style: italic;
+  color: var(--meta); line-height: 1.7;
+}
+
+/* ── Painting spacer ── */
+.painting-wrap {
+  margin: 28px 0 0;
+  border: 1px dashed var(--border-light);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--section-bg);
+}
+.painting-img {
+  width: 100%; display: block;
+  border-radius: 6px 6px 0 0;
+}
+.painting-placeholder {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 220px; flex-direction: column; gap: 10px;
+  color: var(--meta); font-family: 'EB Garamond', serif;
+  font-style: italic; font-size: 0.9rem;
+}
+.painting-placeholder-icon { font-size: 2.2rem; opacity: 0.35; }
+.painting-caption {
+  padding: 10px 16px; font-family: 'Noto Sans Kannada', sans-serif;
+  font-size: 0.78rem; color: var(--meta); text-align: center;
+  border-top: 1px solid var(--border); line-height: 1.6;
+}
+.painting-caption em { font-family: 'EB Garamond', serif; font-style: italic; }
+
+/* ── Poem body ── */
+.poem-body { margin-top: 32px; }
+
+.stanza {
+  margin-bottom: 36px;
+}
+.stanza-lines {
+  font-family: 'Noto Serif Kannada', serif;
+  font-size: 1.05rem; line-height: 2.1;
+  color: var(--text);
+}
+.line { display: block; }
+.stanza-num {
+  display: inline-block; margin-top: 4px;
+  font-family: 'EB Garamond', serif; font-size: 0.82rem;
+  color: var(--gold-dim); font-style: italic; letter-spacing: 0.05em;
+}
+.punct { color: var(--gold-dim); }
+.hyphen-break { color: var(--meta); }
+
+/* ── Attribution ── */
+.attribution {
+  margin-top: 36px; padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.author {
+  font-family: 'Noto Serif Kannada', serif; font-size: 1rem;
+  font-weight: 600; color: var(--gold-light); text-align: right;
+}
+.author-iast {
+  font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--meta); text-align: right;
+  margin-top: 2px;
+}
+.image-credit {
+  margin-top: 14px; font-family: 'Noto Sans Kannada', sans-serif;
+  font-size: 0.8rem; color: var(--meta); line-height: 1.7;
+}
+.image-credit strong { color: var(--gold-light); }
+
+/* ── Footer ── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 36px 0 20px;
+}
+footer {
+  text-align: center; color: var(--meta); font-size: 0.78em;
+  font-family: 'Noto Sans Kannada', sans-serif;
+}
+a { color: var(--gold-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="https://hamsanandi.github.io/poetry/">ಛಂದೋಬದ್ಧ ಕಾವ್ಯ</a>
+  <span>›</span>
+  ಪಂಚವಟಿಯಲ್ಲಿ ಮೊದಲ ದಿನ
+</div>
+
+<div class="poem-header">
+  <div class="poem-title">ಪಂಚವಟಿಯಲ್ಲಿ ಮೊದಲ ದಿನ</div>
+  <div class="poem-title-roman">Pañcavatiyalli modala dina</div>
+  <div class="poem-tags">
+    <span class="tag">ಭಾಮಿನಿ ಷಟ್ಪದಿ</span>
+    <span class="tag">ರಾಮಾಯಣ</span>
+  </div>
+</div>
+
+<div class="context">
+  ರಾಮ ಸೀತೆ ಲಕ್ಷ್ಮಣರು ಪಂಚವಟಿಯಲ್ಲಿ ಕೆಲಕಾಲವಿದ್ದ ಕಥೆ ಯಾರಿಗೆ ಗೊತ್ತಿಲ್ಲ?
+  ಕಲಾವಿದ ರಮೇಶ್ ಆಚಾರ್ಯ ಅವರ "ಪಂಚವಟಿಯಲ್ಲಿ" ವರ್ಣಚಿತ್ರವನ್ನು ನೋಡಿ
+  ಬರೆದ ನಾಲ್ಕು ಭಾಮಿನಿ ಷಟ್ಪದಿಗಳು.
+  <div class="context-en">
+    Four Bhāmini Ṣaṭpadī stanzas written inspired by the painting
+    <em>Pañcavatiyalli</em> by artist Ramesh Acharya.
+  </div>
+</div>
+
+<div class="painting-wrap">
+  <!-- Replace this placeholder with an <img> tag once you have the image file -->
+  <!-- Example: <img src="panchavatiyalli_painting.jpg" alt="ಪಂಚವಟಿಯಲ್ಲಿ — ರಮೇಶ್ ಆಚಾರ್ಯ" class="painting-img"> -->
+  <div class="painting-placeholder">
+    <div class="painting-placeholder-icon">🖼</div>
+    <div>ರಮೇಶ್ ಆಚಾರ್ಯ ಅವರ <strong>"ಪಂಚವಟಿಯಲ್ಲಿ"</strong> ವರ್ಣಚಿತ್ರ</div>
+    <div style="font-size:0.78rem;opacity:0.7;">( ಚಿತ್ರ ಇಲ್ಲಿ ಸೇರಿಸಿ )</div>
+  </div>
+  <div class="painting-caption">
+    <em>Pañcavatiyalli</em> — painting by artist Ramesh Acharya
+    &nbsp;·&nbsp; ಕಲಾವಿದ ರಮೇಶ್ ಆಚಾರ್ಯ ಅವರ ವರ್ಣಚಿತ್ರ (ಚಿತ್ರ ಕೃಪೆ: ಕಲಾವಿದರು)
+  </div>
+</div>
+
+<div class="poem-body">
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ತರುಣಿ ಹರಿಯುವ ನದಿಯ ನೋಡುತಲ್</span>
+      <span class="line">ಅರುಹಿದಳು ತನ್ನಿನಿಯ ರಾಮಗೆ</span>
+      <span class="line">ಹರುಷ ತರುವೀ ತಾಣವಿದು ಬಲು ಸೊಗಸುಕಾಣುತಿದೆ <span class="punct">|</span></span>
+      <span class="line">ಸುರಗಿ ಹೂಗಳು ಬಿರಿದು ಸುತ್ತಲು</span>
+      <span class="line">ಪರಿಮಳವ ಹರಡಿಹವು ಕೇಳ್ ನಾ<span class="hyphen-break">-</span></span>
+      <span class="line">ವಿರಲಿಕಿದುವೇ ಸೊಗದ ನೆಲೆಯಹುದೆಂದಳಾ ಸೀತೆ <span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೧ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ಇಳೆಯ ತನುಜೆಯ ಕೂಡೆ ರಾಮನು</span>
+      <span class="line">ಬಳಿಯ ಗೋದಾವರಿಯ ದಡದ<span class="hyphen-break">-</span></span>
+      <span class="line">ಲ್ಲಿಳಿದು ನಿಂತನು ಮೆಚ್ಚಿದನು ಎಡೆ ತಕ್ಕುದಹುದೆನುತ <span class="punct">|</span></span>
+      <span class="line">ಉಳಿದಿರುವ ವನವಾಸ ಕಾಲವ</span>
+      <span class="line">ಕಳೆಯೆ ಸೊಗವಿದೆನುತಿರೆ ಸುತ್ತಣ</span>
+      <span class="line">ಗಿಳಿಯ ವಿಂಡುಗಳ್ ಅಳಿ ಸಮೂಹವು ಹರ್ಷ ತೋರಿದವು <span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೨ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ಮಡದಿಯಾಸೆಯ ಕೇಳಿ ರಾಮನು</span>
+      <span class="line">ಸಡಗರವ ತೋರುತಲಿ ಲಕ್ಷ್ಮಣ</span>
+      <span class="line">ನೊಡನೆ ಅಲ್ಲೇ ಪರ್ಣಕುಟಿಯನು ನಿರ್ಮಿಸಲು ಹೇಳಿ <span class="punct">|</span></span>
+      <span class="line">ಎಡದ ಕಡೆಯಲಿ ಗೌತಮೀ ನದಿ</span>
+      <span class="line">ಯೆಡೆಗೆ ಹೆಂಡತಿಯನ್ನು ಕರೆದೊ<span class="hyphen-break">-</span></span>
+      <span class="line">ಯ್ದುಡುಗೊರೆಯನಿತ್ತಿಹನು ಮುಡಿಯಲಿ ಕೇದಗೆಯ ಹೂವ <span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೩ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ಸುಗುಣಿ ಲಕ್ಷ್ಮಣನಣ್ಣನಾಣತಿ</span>
+      <span class="line">ತೆಗೆದು ಹಾಕುವನೇನುಯೆಂದಿಗು?</span>
+      <span class="line">ಹೆಗಲ ಮೇಗಡೆ ಹೊತ್ತು ತಂದನು ರೆಂಬೆಕೊಂಬೆಗಳ <span class="punct">|</span></span>
+      <span class="line">ಹಗಲು ಮೀರುವ ಮುನ್ನ ಕಟ್ಟುತ</span>
+      <span class="line">ಮುಗಿಸಿ ಹೊಸ ಕುಟಿಯನ್ನು ಕರೆದಿಹ</span>
+      <span class="line">ಹಗುರ ಮನದಲ್ಲಣ್ಣ ಅತ್ತಿಗೆಯನ್ನೊಳಕೆ ಬರಲು <span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೪ ||</div>
+  </div>
+
+</div>
+
+<div class="attribution">
+  <div class="author">— ಹಂಸಾನಂದಿ</div>
+  <div class="author-iast">Hamsānandi</div>
+  <div class="image-credit">
+    <strong>ಚಿತ್ರ ಕೃಪೆ:</strong> ಕಲಾವಿದ ರಮೇಶ್ ಆಚಾರ್ಯ ಅವರ <strong>"ಪಂಚವಟಿಯಲ್ಲಿ"</strong> ವರ್ಣಚಿತ್ರ.
+  </div>
+</div>
+
+<hr class="section-divider">
+<footer>
+  <a href="https://hamsanandi.github.io/poetry/">ಛಂದೋಬದ್ಧ ಕಾವ್ಯ</a> &nbsp;·&nbsp; hamsanandi.github.io
+</footer>
+
+</body>
+</html>
