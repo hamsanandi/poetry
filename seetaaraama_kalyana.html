@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ಸೀತಾ ಕಲ್ಯಾಣ — ಹಂಸಾನಂದಿ</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+Kannada:wght@400;600&family=Noto+Serif+Kannada:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold: #6b4400; --gold-light: #4a2e00; --gold-dim: #c49030;
+  --bg: #ffffff; --section-bg: #fdf8f0; --header-bg: #f5e8cc;
+  --border: #e0c88a; --border-light: #c9a850;
+  --text: #1a1208; --meta: #7a5c20;
+  --accent-light: #e8c87a;
+}
+body {
+  font-family: 'Noto Serif Kannada', serif;
+  background: var(--bg); color: var(--text);
+  max-width: 680px; margin: 0 auto;
+  padding: 0 24px 60px; font-size: 16px; line-height: 1.75;
+}
+
+/* ── Nav ── */
+.breadcrumb {
+  padding: 16px 0 0;
+  font-family: 'Cinzel', serif; font-size: 0.7rem;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--meta);
+}
+.breadcrumb a { color: var(--gold-dim); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; color: var(--gold); }
+.breadcrumb span { margin: 0 6px; }
+
+/* ── Header ── */
+.poem-header {
+  text-align: center; padding: 28px 0 24px;
+  border-bottom: 1px solid var(--border); position: relative; margin-top: 8px;
+}
+.poem-header::after {
+  content: ''; display: block; height: 2px; width: 100px; margin: 0 auto;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%);
+}
+.poem-title {
+  font-family: 'Noto Serif Kannada', serif; font-size: 1.6rem; font-weight: 600;
+  color: var(--gold-light); line-height: 1.35; margin-bottom: 6px;
+}
+.poem-title-roman {
+  font-family: 'EB Garamond', serif; font-size: 1rem; font-style: italic;
+  color: var(--meta); margin-bottom: 14px;
+}
+.poem-tags { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+.tag {
+  display: inline-block; padding: 2px 10px;
+  font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.75rem;
+  border: 1px solid var(--border-light); border-radius: 4px;
+  color: var(--gold-light); background: var(--accent-light);
+}
+
+/* ── Intro ── */
+.intro-note {
+  margin: 24px 0 0; padding: 16px 20px;
+  background: var(--section-bg); border-left: 3px solid var(--gold-dim);
+  border-radius: 0 5px 5px 0;
+  font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.88rem;
+  color: var(--meta); line-height: 1.9;
+}
+.intro-note p + p { margin-top: 10px; }
+
+/* ── Section header ── */
+.section-header {
+  font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--gold-dim);
+  text-align: center; margin: 36px 0 16px; position: relative;
+}
+.section-header::before, .section-header::after {
+  content: ''; display: inline-block; width: 60px; height: 1px;
+  background: var(--border); vertical-align: middle; margin: 0 12px;
+}
+.section-header.kn {
+  font-family: 'Noto Serif Kannada', serif; letter-spacing: 0.05em;
+  text-transform: none; font-size: 0.9rem; font-weight: 600;
+}
+
+/* ── Prose commentary ── */
+.commentary {
+  margin: 28px 0 10px; padding: 12px 16px;
+  background: var(--section-bg);
+  border-left: 2px solid var(--accent-light);
+  border-radius: 0 4px 4px 0;
+  font-family: 'Noto Sans Kannada', sans-serif;
+  font-size: 0.86rem; color: var(--meta); line-height: 1.9;
+}
+
+/* ── Stanza ── */
+.stanza { margin-bottom: 28px; }
+.stanza-lines {
+  font-family: 'Noto Serif Kannada', serif;
+  font-size: 1.05rem; line-height: 2.1; color: var(--text);
+}
+.line { display: block; }
+.stanza-num {
+  display: block; margin-top: 4px;
+  font-family: 'EB Garamond', serif; font-size: 0.82rem;
+  color: var(--gold-dim); font-style: italic;
+}
+.punct { color: var(--gold-dim); }
+
+/* ── Painting ── */
+.painting-wrap {
+  margin: 24px 0 0; border: 1px solid var(--border);
+  border-radius: 6px; overflow: hidden; background: var(--section-bg);
+}
+.painting-img {
+  width: 100%; display: block; border-radius: 6px 6px 0 0;
+}
+.painting-caption {
+  padding: 10px 16px; font-family: 'Noto Sans Kannada', sans-serif;
+  font-size: 0.78rem; color: var(--meta); text-align: center;
+  border-top: 1px solid var(--border); line-height: 1.6;
+}
+.painting-caption em { font-family: 'EB Garamond', serif; font-style: italic; }
+
+/* ── Attribution ── */
+.attribution {
+  margin-top: 40px; padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.author {
+  font-family: 'Noto Serif Kannada', serif; font-size: 1rem;
+  font-weight: 600; color: var(--gold-light); text-align: right;
+}
+.author-iast {
+  font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--meta); text-align: right; margin-top: 2px;
+}
+
+/* ── Footer ── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 36px 0 20px;
+}
+footer {
+  text-align: center; color: var(--meta); font-size: 0.78em;
+  font-family: 'Noto Sans Kannada', sans-serif;
+}
+a { color: var(--gold-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="https://hamsanandi.github.io/poetry/">ಛಂದೋಬದ್ಧ ಕಾವ್ಯ</a>
+  <span>›</span>
+  ಸೀತಾರಾಮಕಲ್ಯಾಣ
+</div>
+
+<div class="poem-header">
+  <div class="poem-title">ಸೀತಾರಾಮಕಲ್ಯಾಣ</div>
+  <div class="poem-title-roman">Sītā Kalyāṇa</div>
+  <div class="poem-tags">
+    <span class="tag">ಭಾಮಿನಿ ಷಟ್ಪದಿ</span>
+    <span class="tag">ರಾಮಾಯಣ</span>
+    <span class="tag">ವಿವಾಹ ಪಂಚಮಿ</span>
+  </div>
+</div>
+
+<div class="intro-note">
+  <p>ರಾಮ ಸೀತೆಯರ ಮದುವೆಯ ದಿನವೆಂದು ಆಚರಿಸುವ ದಿನ ಮಾರ್ಗಶಿರ ಪಂಚಮಿಯನ್ನು ವಿವಾಹಪಂಚಮಿ ಎಂದೆನ್ನುತ್ತಾರೆ.</p>
+  <p>ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣದಲ್ಲಿ ಈ ಸೀತಾರಾಮಕಲ್ಯಾಣವು ಯಾವ ದಿನದಲ್ಲಿ ನಡೆಯಿತೆಂಬ ವಿಷಯ ಬರದಿದ್ದರೂ, ಆ ಪ್ರಸ್ತಾಪ ಬೇರೆ ರಾಮಾಯಣಗಳಲ್ಲಿಇದ್ದರೂ   ಇರಬಹುದು.ಹಾಗಾಗಿ ಪರಂಪರೆಯಂತೆ ಈ ವಿವಾಹಪಂಚಮಿಯನ್ನು ರಾಮ ಸೀತೆಯರ ಮದುವೆಯ ಹಬ್ಬವಾಗಿ ಆಚರಿಸುವುದುಂಟು.</p>
+  <p>ಇಲ್ಲಿ ನಾನು ಬರೆದಿರುವ ಕಥೆಯು ವಾಲ್ಮೀಕಿಯ ಮೂಲಕ್ಕೆ ಪೂರ್ತಿ ಬದ್ಧವಾಗಿಲ್ಲದಿದ್ದರೂ ಅದರ ಆಶಯವನ್ನು ಮೀರುವುದಿಲ್ಲ. ಓದುವವರಿಗೆ ಸುಲಭವಾಗಲೆಂದು ನಡುನಡುವೆ ಒಂದೆರಡು ಸಾಲುಗಳ ಟಿಪ್ಪಣಿಯನ್ನೂ ಕೊಟ್ಟಿದ್ದೇನೆ.</p>
+</div>
+
+<!-- ══ ಮಂಗಳ ಪದ್ಯ ══ -->
+<div class="section-header kn">ಮಂಗಳ ಪದ್ಯ</div>
+
+<div class="stanza">
+  <div class="stanza-lines">
+    <span class="line">ರಾಮ ಸೀತೆಯರಮಲ ಚರಿತೆಯ-</span>
+    <span class="line">ಸೀಮ ರಸಭರಿತವದು; ನಿಲ್ವುದು</span>
+    <span class="line">ಭೂಮಿಯಲ್ಲಿಹವರೆಗೆ ಬೆಟ್ಟವು ಹರಿವ ಹೊಳೆತೊರೆಯು <span class="punct">।</span></span>
+    <span class="line">ತಾಮಸವ ಕಳೆಯುವುದು ಬಾಳಲಿ</span>
+    <span class="line">ತಾ ಮನುಷ್ಯನ ರೂಪದಲಿ ಹರಿ-</span>
+    <span class="line">ಯೇ ಮಹೋನ್ನತಿಗೇರುವಂತಹ ದಾರಿ ತೋರುವುದು <span class="punct">॥</span></span>
+  </div>
+  <div class="stanza-num">॥ ೧ ॥</div>
+</div>
+
+<!-- ══ ಕಥಾಮುಖ ══ -->
+<div class="section-header kn">ಕಥಾಮುಖ</div>
+
+<div class="stanza">
+  <div class="stanza-lines">
+    <span class="line">ಸರಸವಿದು ಶ್ರೀರಾಮ ಸೀತೆಯ</span>
+    <span class="line">ಚರಿತೆಯೊಳಗನುಪಮವು ಜಾನಕಿ</span>
+    <span class="line">ಪರಿಣಯದ ಶುಭವೇಳೆ ಒದಗುವುದುಂಟು ನಲಿವಿನಲಿ <span class="punct">।</span></span>
+    <span class="line">ಅರುಹುವೆನು ಸುಸಮಯದಿ ವಿಬುಧರು</span>
+    <span class="line">ಪರಿಕಿಸಲಿ ಸಂತೋಷ ಗೊಳ್ಳಲಿ</span>
+    <span class="line">ರಸದಘಟ್ಟಿಯ ಸವಿದು ಮನವನು ಹಗುರಗೈಯಲಿಕೆ <span class="punct">॥</span></span>
+  </div>
+  <div class="stanza-num">॥ ೨ ॥</div>
+</div>
+
+<div class="commentary">
+  ಸೀತೆಗೆ ಸ್ವಯಂವರವೆಂದು ಜನಕ ಘೋಷಿಸಿದ್ದಾನೆ. ಡಂಗುರದಲ್ಲಿ ಸೀತೆ ಆಸ್ಥಾನದಲ್ಲಿಟ್ಟ ಶಿವಧನುಸ್ಸನ್ನು ಎತ್ತಿ ಹೆದೆ ಏರಿಸಿದವರನ್ನು ಮದುವೆಯಾಗುವಳೆಂಬ ವಿಷಯವನ್ನು ಕೇಳಿದ ಮಿಥಿಲೆಯ ಜನರು ಕುತೂಹಲ-ಆತಂಕದಲ್ಲಿ ತಮ್ಮ ರಾಜಕುಮಾರಿಗೆ ತಕ್ಕ ವರನು ಸಿಕ್ಕಾನೋ ಇಲ್ಲವೋ ಎಂದು, ಅವಳಿಗೆ ಒಳಿತಾಗಲೆಂದು ಮನದಲ್ಲೇ ಹರಸುತ್ತಿದ್ದರಂತೆ:
+</div>
+
+<div class="stanza">
+  <div class="stanza-lines">
+    <span class="line">ಸಾರಿರಲು ಡಂಗುರವ ಮಿಥಿಲೆಯ</span>
+    <span class="line">ಚಾರ ಗಡಣವು ನಾಳೆಯರಸು ಕು-</span>
+    <span class="line">ಮಾರಿ ಶಿವಧನುವೆತ್ತಿದನ ತಾ ವರಿಸುವಳೆನುತಲಿ <span class="punct">।</span></span>
+    <span class="line">ಊರ ಜನ ಕಾತರದಿ ನುಡಿದಿಹ-</span>
+    <span class="line">ರಾರು ಬರುವರೊ? ಹೆದೆಯನೇರಿಸಿ-</span>
+    <span class="line">ಯಾರೊ? ಸೀತೆಯ ದೈವಕಾಯಲೆನುತಲಿ ಹರಸಿಹರು <span class="punct">॥</span></span>
+  </div>
+  <div class="stanza-num">॥ ೩ ॥</div>
+</div>
+
+<div class="commentary">
+  ಸೀತಾಸ್ವಯಂವರದ ಬಗ್ಗೆ ಜನಕ ರಾಜ ಡಂಗೂರವಂತೂ ಸಾರಿದ್ದಾಗಿದೆ. ಇಡೀ ಮಿಥಿಲಾಪುರಕ್ಕೇ ಇನ್ನು ಶಿವಧನುವನ್ನು ಹೆದೆಯೇರಿಸಿ ಸೀತೆಯ ಮನಗೆಲ್ಲುವನಾರಿರಬಹುದೆಂಬ ಕುತೂಹಲವುಂಟಾಗಿದೆ:
+</div>
+
+<div class="stanza">
+  <div class="stanza-lines">
+    <span class="line">ಪುರವು ಮಿಥಿಲೆಯು ಸಡಗರಿಸುತಿದೆ</span>
+    <span class="line">ಬರುವರೆನ್ನುತ ರಾಜಕುವರರು</span>
+    <span class="line">ಸರಳತರಳೆಯ ಮುಗುದೆಸೀತೆಯ ಕೈಯ ಹಿಡಿಯಲಿಕೆ<span class="punct">!</span></span>
+    <span class="line">ಇರುವುದಾರಿಗೊ ಭಾಗ್ಯವಿಂಥದು?</span>
+    <span class="line">ಸರಸಿಜವ ನಾಚಿಸುವ ಮೊಗವಿಹ</span>
+    <span class="line">ಸಿರಿಯಿವಳ ಮನವನ್ನು ಗೆಲ್ಲುವ ಮನ್ನನಾರಿಹನೊ<span class="punct">!</span> <span class="punct">॥</span></span>
+  </div>
+  <div class="stanza-num">॥ ೪ ॥</div>
+</div>
+
+<div class="commentary">
+  ಇತ್ತ ಅದೇ ಸಮಯಕ್ಕೆ ರಾಮ ಲಕ್ಷ್ಮಣರು ವಿಶ್ವಾಮಿತ್ರನೊಡನೆ ಮಿಥಿಲೆಯನ್ನು ಪ್ರವೇಶಿಸಿ ಆ ನಗರಿಯ ಸೊಗಸಿನ ಬಗ್ಗೆ ಮಾತಾಡುತ್ತ ರಸ್ತೆಯಲ್ಲಿ ಬರುವಾಗ, ಒಬ್ಬ ವೃದ್ಧೆ ರಾಮನ ಬಳಿಸಾರಿ, ಅವನ ಅಂದಕ್ಕೆ ಬೆರಗಾಗಿ ಅವನಿಗೆ ದೃಷ್ಟಿಯಾಗಬಾರದೆಂದು ದೃಷ್ಟಿತೆಗೆದ ಪರಿ ಹೀಗಿದೆಯಂತೆ:
+</div>
+
+<div class="stanza">
+  <div class="stanza-lines">
+    <span class="line">ಬಹಳ ಸೊಗವೀ ನಗರಿ ಲಕ್ಷ್ಮಣ<span class="punct">!</span></span>
+    <span class="line">ಇಹರು ಸಜ್ಜನನಿಕರ<span class="punct">!</span> ಶೋಭಿಸು-</span>
+    <span class="line">ತಿಹುದು ಸಗ್ಗಕೆ ಸಾಟಿಯಾಗುತ ನೋಡು<span class="punct">!</span> ಮೆರೆದಿಹುದು<span class="punct">!</span></span>
+    <span class="line">ಅಹಹ ಹಿತವೆನುತಿರಲು ರಾಮನು</span>
+    <span class="line">ಮಹಿಳೆಯೋರ್ವಳು ಬಳಿಗೆ ಸಾರುತ</span>
+    <span class="line">ಸಹಜದಲಿ ರಘುರಾಮನಿಗೆ ಮಿಗೆ ದಿಟ್ಟಿ ತೆಗೆದಿಹಳು <span class="punct">॥</span></span>
+  </div>
+  <div class="stanza-num">॥ ೫ ॥</div>
+</div>
+
+<div class="commentary">
+  ದೃಷ್ಟಿ ತೆಗೆದ ನಂತರ ಆಕೆ, ತನ್ನ ಬಳಿಯಿದ್ದವರಿಗೆ ಹೇಳಿದ್ದು ಹೀಗೆ:
+</div>
+
+<div class="stanza">
+  <div class="stanza-lines">
+    <span class="line">ಮುಗಿಲಬಣ್ಣನು ನವಿರುನುಡಿವನು</span>
+    <span class="line">ಹಗಲ ನೇಸರ ಹೊಳೆವ ತಿಂಗಳ</span>
+    <span class="line">ಮಿಗಿಲ ಕಾಂತಿಯನಾಂತ ಚೆಲುವನು ರಾಮಚಂದಿರನು <span class="punct">।</span></span>
+    <span class="line">ನಗುವ ಮುಖವನು ನೋಡಿದಾಕ್ಷಣ</span>
+    <span class="line">ಹಗುರವೆನಿಸಿಹನೆನ್ನ ಮನವನು</span>
+    <span class="line">ಚಿಗುರು ಪೂಶರವಿಡಿದ ಮನ್ಮಥಗಿಂತ ಸುಂದರನು <span class="punct">॥</span></span>
+  </div>
+  <div class="stanza-num">॥ ೬ ॥</div>
+</div>
+
+<div class="commentary">
+  ಹೀಗೆ ರಾಮ ಲಕ್ಷ್ಮಣರು ಅರಮನೆಯ ದಾರಿಯಲ್ಲಿ ನಡೆದಾಡುವುದನ್ನು ಅಂತಃಪುರದ ಉಪ್ಪರಿಗೆಯಲ್ಲಿ ಸೀತೆಯ ತಂಗಿ ಊರ್ಮಿಳೆ ಕಂಡಳಂತೆ:
+</div>
+
+<div class="stanza">
+  <div class="stanza-lines">
+    <span class="line">ಚಟುವಟಿಕೆ ಚಿಮ್ಮುತಿಹ ಕೋಮಲೆ</span>
+    <span class="line">ತಟವಟವನರಿಯದಿಹಳೂರ್ಮಿಳೆ</span>
+    <span class="line">ಕಿಟಕಿಯಲಿ ಕುಳಿತವಳು ಬರುತಿರುವವರ ಕಂಡಿಹಳು <span class="punct">।</span></span>
+    <span class="line">ಸಟೆಯನಾಡದ ಬಾಲೆ ಕಣ್ಣೆವೆ</span>
+    <span class="line">ಮಿಟುಕಿಸದೆಲೆಯೆ ನೋಡಿ ನುಡಿದಳು</span>
+    <span class="line">ದಿಟದಲಿಬ್ಬರು ಸೂರ್ಯರೊಟ್ಟಿಗೆ ಬಂದರಿಲ್ಲೆಂದು<span class="punct">!</span> <span class="punct">॥</span></span>
+  </div>
+  <div class="stanza-num">॥ ೭ ॥</div>
+</div>
+
+<div class="commentary">
+  ಮುಂದುವರಿಯುತ್ತಾ ಊರ್ಮಿಳೆ ಅಕ್ಕ ಸೀತೆಗೆ ಹೀಗೆ ನುಡಿದಳು:
+</div>
+
+<div class="stanza">
+  <div class="stanza-lines">
+    <span class="line">ಏನು ಹೇಳಲಿ ಕೇಳೆ ಜಾನಕಿ</span>
+    <span class="line">ಸಾನುರಾಗದಲೆನ್ನ ಮಾತನು</span>
+    <span class="line">ಮಾನಿಸರಿಗೆಲ್ಲಿರುವುದಿಂತಹ ಕಳೆಯು ಮೊಗದಲ್ಲಿ <span class="punct">।</span></span>
+    <span class="line">ಜ್ಞಾನಿಗಳ ಕೇಳಿದರೆ ಪೇಳುವ-</span>
+    <span class="line">ರೀ ನಿರಂಜನ ರೂಪಿ ಯುವಕರು</span>
+    <span class="line">ಮಾನಿನೀಯರ ಮನಕೆ ಲಗ್ಗೆಯ ಹಾಕೆ ಬಂದಿಹರು<span class="punct">!</span> <span class="punct">॥</span></span>
+  </div>
+  <div class="stanza-num">॥ ೮ ॥</div>
+</div>
+
+<div class="commentary">
+  ಜಾಣೆ ಊರ್ಮಿಳೆಯಿಂದ ಸೀತೆಗೆ ಇನ್ನಷ್ಟು ಸಲಹೆಗಳು:
+</div>
+
+<div class="stanza">
+  <div class="stanza-lines">
+    <span class="line">ಅಕ್ಕ<span class="punct">!</span> ಕೇಳೀಗೆನ್ನ ಮಾತನು</span>
+    <span class="line">ಚಿಕ್ಕವಳು ನಾನೆಂದು ಗಣಿಸದೆ</span>
+    <span class="line">ನಕ್ಕು ಬಿಡದೆಲೆ ಸಿಗ್ಗು ತೋರದೆ ಕಡೆಯಗಾಣಿಸದೆ <span class="punct">|</span></span>
+    <span class="line">ತಕ್ಕವನು ನಿನಗಿವನು ಕಣ್ಣಿಗೆ</span>
+    <span class="line">ಸಿಕ್ಕಿರಲು ಬಹುಮೂಲ್ಯ ರತುನವು</span>
+    <span class="line">ಮಿಕ್ಕವರ ಮೇಲಕ್ಕರೆಯ ಕಿಂಚಿತ್ತು ತೋರದಿರು<span class="punct">!</span> <span class="punct">||</span></span>
+  </div>
+  <div class="stanza-num">|| ೯ ||</div>
+</div>
+
+<div class="commentary">
+  ಮಾರನೆಯ ದಿನ ಸ್ವಯಂವರದ ವಿಶೇಷ ಸಂದರ್ಭ! ಸಭೆ ತುಂಬಿದೆ. ಎಲ್ಲೆಲ್ಲೂ ಸಡಗರ. ಸ್ವಯಂವರ ಮಂಟಪಕ್ಕೆ ಬರುತ್ತಲಿದ್ದ ಸೀತೆ ಕುಳಿತ ರಾಜಕುಮಾರರ ಮುಂದೆ ಹಾದುಹೋಗುವಾಗ ಏನಾಯಿತು?:
+</div>
+
+<div class="stanza">
+  <div class="stanza-lines">
+    <span class="line">ಮಾಲೆ ಪಿಡಿಯುತ ಮೆಲ್ಲನಡೆದಿರೆ</span>
+    <span class="line">ನೀಳಜಡೆಯಾ ಹುಲ್ಲೆಗಣ್ಣಿಯು</span>
+    <span class="line">ಸಾಲು ಕುಳಿತಿರುವರಸುಕುವರರನೋರೆ ನೋಡುತಲಿ <span class="punct">।</span></span>
+    <span class="line">ನೀಲವರ್ಣನು ಭಾನುತೇಜನು</span>
+    <span class="line">ಬೀಳೆ ಕಣ್ಗಳಿಗಲ್ಲೆ ಸೀತೆಯ</span>
+    <span class="line">ಕಾಲು ಮುಂದಕೆ ಹೋಗಲೊಲ್ಲದೆ ತಡೆದಿಹುದು ನಡೆಯು <span class="punct">॥</span></span>
+  </div>
+  <div class="stanza-num">॥ ೧೦ ॥</div>
+</div>
+
+<div class="commentary">
+  ಸೀತೆ ಮೊದಲ ಬಾರಿ ರಾಮನನ್ನು ಕಂಡ ಸಂದರ್ಭ ಹೇಗಿತ್ತು?:
+</div>
+
+<div class="stanza">
+  <div class="stanza-lines">
+    <span class="line">ಮಾತಿರದೆ ನೋಡುತ್ತಿರೆ ಜನಕ-</span>
+    <span class="line">ಜಾತೆ ಶ್ರೀರಾಮನನು ದಿಟ್ಟಿಸಿ</span>
+    <span class="line">ಆತ ಹಗಲಿನ ಚಂದಿರನೆನುತ ವಿಸ್ಮಯವ ತಳೆಯೆ <span class="punct">।</span></span>
+    <span class="line">ಏತರದ ವೈಚಿತ್ರ ಮನ ತಾ</span>
+    <span class="line">ಗೀತೆ ಹರುಷದಿ ಹಾಡುತಲಿಹುದು</span>
+    <span class="line">ಈತನನು ನೋಡಿರಲುಯೆಂದಳು ಮನದೊಳಗೆ ಬಾಲೆ <span class="punct">॥</span></span>
+  </div>
+  <div class="stanza-num">॥ ೧೧ ॥</div>
+</div>
+
+<div class="commentary">
+  ತನ್ನ ಮುಂದೆ ಕ್ಷಣಕಾಲ ಕಾಲ್ದೆಗೆಯದೆ ನಿಂತ ಸೀತೆಯನ್ನ ಕಂಡ ಶ್ರೀರಾಮನ ಮನಸ್ಸಿನಲ್ಲಿ ಮೂಡಿದ ಭಾವನೆಗಳು ಹೀಗಿದ್ದವಂತೆ:
+</div>
+
+<div class="stanza">
+  <div class="stanza-lines">
+    <span class="line">ಸೀತೆಯಿವಳೇ? ನಿಜದಲಾ ಭುವಿ-</span>
+    <span class="line">ಜಾತೆಯಿವಳೇ? ಸಕಲ ಭುವನ-</span>
+    <span class="line">ಖ್ಯಾತೆಯಿವಳೇ? ಕ್ಷೀರ ಸಾಗರ ಜಾತೆಯಿವಳೇನು? <span class="punct">।</span></span>
+    <span class="line">ಪ್ರೀತಿಯನು ಚಿಮ್ಮುತಿಹ ಕಂಗಳ</span>
+    <span class="line">ರೀತಿಯೇನಿದು<span class="punct">!</span> ಅರೆಚಣದಲೇ</span>
+    <span class="line">ಸೋತಿಹೆನು<span class="punct">!</span> ನೀ ಸೋಲದಿಹ ಭೀತಿಯಲೆ ಸೊರಗಿದೆನು<span class="punct">!</span> <span class="punct">॥</span></span>
+  </div>
+  <div class="stanza-num">॥ ೧೨ ॥</div>
+</div>
+
+<div class="commentary">
+  ಒಬ್ಬರಾದ ಮೇಲೆ ಒಬ್ಬ ರಾಜರು, ಶಿವಧನುಸ್ಸನ್ನು ಎತ್ತಿ ಹೆದೆಯೇರಿಸಲು ಹೋದಾಗ:
+</div>
+
+<div class="stanza">
+  <div class="stanza-lines">
+    <span class="line">ಸರದಿಯಂತೆಯೆ ಹೊರಟ ರಾಯರು</span>
+    <span class="line">ಸರಸರನೆ ನಡೆಯುತ್ತ ಶಿವಧನು-</span>
+    <span class="line">ವಿರಿಸಿರುವೆಡೆಗೆ ಹೋಗಿ ಬಿಲ್ಲನ್ನೆತ್ತ ಹೊರಟಿರಲು <span class="punct">।</span></span>
+    <span class="line">ಅರರೆ<span class="punct">!</span> ಕಟ್ಟಿತು ಹಣೆಯ ಮೇಲೆ ಬೆ-</span>
+    <span class="line">ವರಿನ ಹನಿಗಳ ಸಾಲು<span class="punct">!</span> ಗೋಡೆಯ-</span>
+    <span class="line">ದುರಿತು<span class="punct">!</span> ಸಾಗದ ಕಾರ್ಯವಿದೆನುತ ನೆಲವು ನಡುಗಿತ್ತು<span class="punct">!</span> <span class="punct">॥</span></span>
+  </div>
+  <div class="stanza-num">॥ ೧೩ ॥</div>
+</div>
+
+<div class="commentary">
+  ಒಬ್ಬರಾದ ಮೇಲೆ ಒಬ್ಬರು ಸೋಲುತ್ತಿದ್ದಂತೆ, ಅತ್ತ ಜನಕನಿಗೆ, ಇತ್ತ ಸೀತೆಗೆ ಇಬ್ಬರಿಗೂ ಮನದಲ್ಲಿ ದುಗುಡ:
+</div>
+
+<div class="stanza">
+  <div class="stanza-lines">
+    <span class="line">ಏನ ಪೇಳಲಿ ಕೇಳು ರಾಯರ</span>
+    <span class="line">ಮಾನ ಪೋದುದು ಜನಕ ಭೂಪತಿ</span>
+    <span class="line">ತಾನು ಮಾಡಿದ ಪಾಪವೇನಿಹುದೆಂದು ಯೋಚಿಸಿರೆ <span class="punct">।</span></span>
+    <span class="line">ಜಾನಕಿಗೆ ಪರಿತಾಪ ಹೆಚ್ಚಿತು</span>
+    <span class="line">ಸಾನುರಾಗದಿ ರಾಮಚಂದ್ರನ-</span>
+    <span class="line">ದೇನು ಶಿವಧನುವೆಡೆಗೆ ಪೋಗನೆನುತ್ತ ಮಿಡುಕಿದಳು <span class="punct">॥</span></span>
+  </div>
+  <div class="stanza-num">॥ ೧೪ ॥</div>
+</div>
+
+<div class="commentary">
+  ಹಲವು ರಾಜರು ಸೀತೆಯ ತಂದೆ ಜನಕರಾಯನಿಟ್ಟ ಪಂಥದಲ್ಲಿ ವಿಫಲರಾದ ನಂತರ, ಇನ್ನು ವಿಳಂಬವು ಬೇಡ, ಕೂಡಲೆ ಹೋಗಿ ಬಿಲ್ಲನ್ನೆತ್ತಬೇಕೆಂದು ಲಕ್ಷ್ಮಣ ತನ್ನ ಅಣ್ಣನನ್ನು ಕಳಿಸುತ್ತಾನೆ:
+</div>
+
+<div class="stanza">
+  <div class="stanza-lines">
+    <span class="line">ಇತ್ತ ರಾಮನನೆಬ್ಬಿಸುತ ಸೌ-</span>
+    <span class="line">ಮಿತ್ರಿ ನುಡಿದನು ಹಸನು ಮಾತನು</span>
+    <span class="line">ಅತ್ತ ಹೋಗೈ ದಾಶರಥಿ ಶಿವಧನುವನಿಟ್ಟಕಡೆ<span class="punct">!</span></span>
+    <span class="line">ಎತ್ತಿ ಹೆದೆಯೇರಿಸಲು ಗೆಲ್ಲುವೆ</span>
+    <span class="line">ಚಿತ್ತದಲಿ ಮೈಥಿಲಿಯನೇ ನೆನೆ-</span>
+    <span class="line">ಯುತ್ತಲಿದ್ದರೆ ಮುದದಿ<span class="punct">!</span> ಶಕುನವು ಶುಭವಿಹುದುಯೆಂದು<span class="punct">!</span> <span class="punct">॥</span></span>
+  </div>
+  <div class="stanza-num">॥ ೧೫ ॥</div>
+</div>
+
+<div class="commentary">
+  ಅಂತೂ ರಾಮ ಎದ್ದು ಶಿವಧನುವಿಟ್ಟೆಡೆಗೆ ನಡೆದು, ಅದನ್ನು ಎತ್ತಿದ್ದಾನೆ:
+</div>
+
+<div class="stanza">
+  <div class="stanza-lines">
+    <span class="line">ತಾಮರೆಯ ಕಣ್ಣುಗಳ ಸುಂದರ</span>
+    <span class="line">ರಾಮ ಹರಧನುಸನ್ನು ಎತ್ತಿರೆ</span>
+    <span class="line">ತಾ ಮನದೊಳಗೆ ಶಿವನನೇ ನುತಿಸುತಲಿ ದೃಢದಿಂದ <span class="punct">।</span></span>
+    <span class="line">ಕಾಮದೇವಗು ಮಿಗಿಲಿಹ ಚೆಲುವ-</span>
+    <span class="line">ನೇ ಮನದೊಳಗೆ ನಿಲಿಸುವೆನೆನುತ</span>
+    <span class="line">ಸಾಮಜಗಮನೆ ಜಾನಕಿಯು ಶಿವನನ್ನು ನೆನೆದಿಹಳು <span class="punct">॥</span></span>
+  </div>
+  <div class="stanza-num">॥ ೧೬ ॥</div>
+</div>
+
+<div class="stanza">
+  <div class="stanza-lines">
+    <span class="line">ಒಂದೆ ಮಾತಿನ ದಾಶರಥಿ ತಾ-</span>
+    <span class="line">ನಿಂದು ಶಿವನಾ ಬಿಲ್ಲನೆತ್ತಲಿ-</span>
+    <span class="line">ಕೆಂದು ಬಾಗಿದ ಶಿರವನೆತ್ತಿರಲಲ್ಲೆ ಜಾನಕಿಯ <span class="punct">।</span></span>
+    <span class="line">ಇಂದುವದನದ ಹುಬ್ಬುಬಿಲ್ಗಳ</span>
+    <span class="line">ಚಂದ ಕಂಡಿರಲೊಂದು ಚಣ ಮನ-</span>
+    <span class="line">ದೊಂದುಗುರಿಯಿಬ್ಬಗೆಯೆನಿಸಿರಲು ಶಿವಶಿವಾಯೆಂದ<span class="punct">!</span> <span class="punct">॥</span></span>
+  </div>
+  <div class="stanza-num">॥ ೧೭ ॥</div>
+</div>
+
+<div class="commentary">
+  ರಾಮ ಶಿವಧನುವನ್ನೆತ್ತಿದ್ದೂ ಆಯಿತು! ಅದನ್ನು ಹೆದೆಯೇರಿಸುವಾಗ ಅದು ಮುರಿದದ್ದೂ ಆಯಿತು. ಸೀತೆ ಮಾಲೆ ಹಾಕಿದ್ದೂ ಆಯಿತು. ಜನ ಮೆಚ್ಚಿದ್ದೂ ಆಯಿತು — ಇದಲ್ಲವೇ ಕಲ್ಯಾಣವೆಂದರೆ!:
+</div>
+
+<div class="stanza">
+  <div class="stanza-lines">
+    <span class="line">ಬಿಲ್ಲನೆತ್ತುತ ಹೆದೆಯನೇರಿಸೆ</span>
+    <span class="line">ಝಲ್ಲೆನುವ ಸದ್ದಿನಲಿ ಮುರಿದುದು</span>
+    <span class="line">ಎಲ್ಲ ಸಭಿಕರು ಬೆರಗಿನಲಿ ನೋಡುತಿರಲಚ್ಚರಿಯ <span class="punct">।</span></span>
+    <span class="line">ಸಲ್ಲುತಿದೆ ಪುಷ್ಪಗಳ ವೃಷ್ಟಿಯು</span>
+    <span class="line">ಮಲ್ಲೆ ಹೂಗಳ ಮಾಲೆ ಬಂದವು</span>
+    <span class="line">ಅಲ್ಲೆ ಸಂದುದು ಮಂಗಳದ ಗಳಿಗೆಯಲಿ ಕಲ್ಯಾಣ<span class="punct">!</span> <span class="punct">॥</span></span>
+  </div>
+  <div class="stanza-num">॥ ೧೮ ॥</div>
+</div>
+
+<div class="stanza">
+  <div class="stanza-lines">
+    <span class="line">ಉಗ್ಗಡಿಸೆ ಮಂತ್ರಗಳು ಸುತ್ತಲು</span>
+    <span class="line">ಸುಗ್ಗಿಯಲಿ ಸಂತಸವು ಹರಿಯಲು</span>
+    <span class="line">ಬಗ್ಗಿರುವ ಕೊರಳಲ್ಲಿ ಹಾರವು ಮೆರೆಯೆ ಸತಿಪತಿಯ<span class="punct">!</span></span>
+    <span class="line">ಹಿಗ್ಗಿನಲಿ ವಧುವರರಿಗೆಲ್ಲರು</span>
+    <span class="line">ಸಗ್ಗಸೊಗವಿರುತಿರಲಿಯೆನ್ನುತ</span>
+    <span class="line">ಅಗ್ಗಳದಲಾಶೀರ್ವಚನಗಳ ನೀಡೆ ಕಲ್ಯಾಣ <span class="punct">॥</span></span>
+  </div>
+  <div class="stanza-num">॥ ೧೯ ॥</div>
+</div>
+
+<div class="stanza">
+  <div class="stanza-lines">
+    <span class="line">ಇನಕುಲಜ ರಾಮನಲಿ ನೀಲಿಯು</span>
+    <span class="line">ಮನದಣುಗೆಯಾ ನಾಚಿರುವ ಕದ-</span>
+    <span class="line">ಪಿನಲಿರುವ ಕೆಂಪೊಡನೆ ಸೀರೆಯ ಹಸಿರು ಸೇರುತಿರೆ <span class="punct">।</span></span>
+    <span class="line">ಜನಕನೋಲಗದಲ್ಲೆ ಹೋಳಿಯ</span>
+    <span class="line">ಘನಮಹೋತ್ಸವವಾದುದೈ<span class="punct">!</span> ವರ್-</span>
+    <span class="line">ಣನೆಗೆ ಮೀರಿದ ಸಂಭ್ರಮವು ಕೇಳಿದುವೆ ಕಲ್ಯಾಣ <span class="punct">॥</span></span>
+  </div>
+  <div class="stanza-num">॥ ೨೦ ॥</div>
+</div>
+
+<div class="stanza">
+  <div class="stanza-lines">
+    <span class="line">ಮಂಗಳವು ಸಿಂಗಾರಿ ಸೀತೆಗೆ</span>
+    <span class="line">ತಂಗದಿರಮೊಗವಿರುವ ರಾಮಗೆ</span>
+    <span class="line">ಮಂಗಳವಿರಲಿ ಸಕಲಲೋಕಕ್ಕೆಂದು ಭಜಿಸುತ್ತ <span class="punct">।</span></span>
+    <span class="line">ಪೊಂಗುತಿರಲೆಲ್ಲೆಲ್ಲು ನೆಮ್ಮದಿ</span>
+    <span class="line">ಇಂಗಿಹೋಗಲಿ ದುಃಖದುಮ್ಮಾ-</span>
+    <span class="line">ನಂಗಳೀಜಗದಿಂದಲೆನ್ನುತ ಕೋರೆ ಕಲ್ಯಾಣ <span class="punct">॥</span></span>
+  </div>
+  <div class="stanza-num">॥ ೨೧ ॥</div>
+</div>
+
+<div class="attribution">
+  <div class="author">— ಹಂಸಾನಂದಿ</div>
+  <div class="author-iast">Hamsānandi</div>
+</div>
+
+<hr class="section-divider">
+<footer>
+  <a href="https://hamsanandi.github.io/poetry/">ಛಂದೋಬದ್ಧ ಕಾವ್ಯ</a> &nbsp;·&nbsp; hamsanandi.github.io
+</footer>
+
+</body>
+</html>
