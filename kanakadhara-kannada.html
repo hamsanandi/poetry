@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ಕನಕಧಾರಾ ಸ್ತೋತ್ರ – ಅನುವಾದ</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+Kannada:wght@400;600&family=Noto+Serif+Kannada:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold: #6b4400; --gold-light: #4a2e00; --gold-dim: #c49030;
+  --bg: #ffffff; --section-bg: #fdf8f0; --header-bg: #f5e8cc;
+  --border: #e0c88a; --border-light: #c9a850;
+  --text: #1a1208; --meta: #7a5c20;
+  --accent-light: #e8c87a;
+}
+body {
+  font-family: 'Noto Serif Kannada', serif;
+  background: var(--bg); color: var(--text);
+  max-width: 680px; margin: 0 auto;
+  padding: 0 24px 60px; font-size: 16px; line-height: 1.75;
+}
+
+/* Nav */
+.breadcrumb {
+  padding: 16px 0 0;
+  font-family: 'Cinzel', serif; font-size: 0.7rem;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--meta);
+}
+.breadcrumb a { color: var(--gold-dim); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; color: var(--gold); }
+.breadcrumb span { margin: 0 6px; }
+
+/* Header */
+.poem-header {
+  text-align: center; padding: 28px 0 24px;
+  border-bottom: 1px solid var(--border); position: relative; margin-top: 8px;
+}
+.poem-header::after {
+  content: ''; display: block; height: 2px; width: 100px; margin: 0 auto;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%);
+}
+.poem-title {
+  font-family: 'Noto Serif Kannada', serif; font-size: 1.6rem; font-weight: 600;
+  color: var(--gold-light); line-height: 1.35; margin-bottom: 6px;
+}
+.poem-title-roman {
+  font-family: 'EB Garamond', serif; font-size: 1rem; font-style: italic;
+  color: var(--meta); margin-bottom: 14px;
+}
+.poem-tags { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+.tag {
+  display: inline-block; padding: 2px 10px;
+  font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.75rem;
+  border: 1px solid var(--border-light); border-radius: 4px;
+  color: var(--gold-light); background: var(--accent-light);
+}
+
+/* Context */
+.context {
+  margin: 24px 0 0; padding: 14px 18px;
+  background: var(--section-bg); border-left: 3px solid var(--gold-dim);
+  border-radius: 0 5px 5px 0;
+  font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.88rem;
+  color: var(--meta); line-height: 1.8;
+}
+.context-en {
+  margin-top: 8px;
+  font-family: 'EB Garamond', serif; font-size: 0.88rem; font-style: italic;
+  color: var(--meta); line-height: 1.7;
+}
+
+/* Painting */
+.painting-wrap {
+  margin: 28px 0 0;
+  border: 1px dashed var(--border-light);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--section-bg);
+}
+.painting-img {
+  width: 100%; display: block;
+  border-radius: 6px 6px 0 0;
+}
+.painting-caption {
+  padding: 10px 16px; font-family: 'Noto Sans Kannada', sans-serif;
+  font-size: 0.78rem; color: var(--meta); text-align: center;
+  border-top: 1px solid var(--border); line-height: 1.6;
+}
+.painting-caption em { font-family: 'EB Garamond', serif; font-style: italic; }
+
+/* Poem body */
+.poem-body { margin-top: 32px; }
+.stanza { margin-bottom: 36px; }
+.stanza-lines {
+  font-family: 'Noto Serif Kannada', serif;
+  font-size: 1.05rem; line-height: 2.1;
+  color: var(--text);
+}
+.line { display: block; }
+.stanza-num {
+  display: inline-block; margin-top: 4px;
+  font-family: 'EB Garamond', serif; font-size: 0.82rem;
+  color: var(--gold-dim); font-style: italic; letter-spacing: 0.05em;
+}
+.punct { color: var(--gold-dim); }
+
+/* Attribution */
+.attribution {
+  margin-top: 36px; padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.author {
+  font-family: 'Noto Serif Kannada', serif; font-size: 1rem;
+  font-weight: 600; color: var(--gold-light); text-align: right;
+}
+.author-iast {
+  font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--meta); text-align: right;
+  margin-top: 2px;
+}
+.image-credit {
+  margin-top: 14px; font-family: 'Noto Sans Kannada', sans-serif;
+  font-size: 0.8rem; color: var(--meta); line-height: 1.7;
+}
+.image-credit strong { color: var(--gold-light); }
+
+/* Footer */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 36px 0 20px;
+}
+footer {
+  text-align: center; color: var(--meta); font-size: 0.78em;
+  font-family: 'Noto Sans Kannada', sans-serif;
+}
+a { color: var(--gold-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="https://hamsanandi.github.io/poetry/">ಛಂದೋಬದ್ಧ ಕಾವ್ಯ</a>
+  <span>›</span>
+  ಕನಕಧಾರಾ ಸ್ತೋತ್ರ – ಅನುವಾದ
+</div>
+
+<div class="poem-header">
+  <div class="poem-title">ಕನಕಧಾರಾ ಸ್ತೋತ್ರ – ಅನುವಾದ</div>
+  <div class="poem-title-roman">Kanakadhārā Stotra – Anuvāda</div>
+  <div class="poem-tags">
+    <span class="tag">ಸ್ತೋತ್ರ</span>
+    <span class="tag">ಲಕ್ಷ್ಮೀ</span>
+  </div>
+</div>
+
+<div class="context">
+  ಆದಿಶಂಕರರ ಕನಕಧಾರಾ ಸ್ತೋತ್ರದ ನನ್ನ ಅನುವಾದ.
+  <div class="context-en">
+    A Kannada metrical rendering of Ādi Śaṅkara’s Kanakadhārā Stotra.
+  </div>
+</div>
+
+<div class="painting-wrap">
+  <img src="panchavatiyalli-kadeya-dina-painting.jpg" class="painting-img">
+  <div class="painting-caption">
+    <em>Kanakadhārā Stotra</em>
+  </div>
+</div>
+
+<div class="poem-body">
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ಮೊಗ್ಗೊಡೆದಿಹ ಲವಂಗ ಮರವನ್ನು ಮುತ್ತುತಿಹ</span>
+      <span class="line">ಹೆಣ್ದುಂಬಿಯೋಲ್ ಹರಿಯ ಬಳಿಸಾರಿ ನಲಿವಾಕೆ</span>
+      <span class="line">ಕಣ್ಣುಗಳ ಓರೆನೋಟದಲೆ ಸಕಲಸುಖವಿತ್ತು</span>
+      <span class="line">ಒಳ್ಳಿತನು ತಂದೀಯಲಾ ಮಂಗಳೆ <span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೧ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ಜೇನುಣಲು ಕನ್ನೈದಿಲೆಯೆಡೆ ಮರಳುವ ದುಂಬಿ</span>
+      <span class="line">-ಯಂದದಲಿ ನಾಚುತ್ತ ಮುರಹರನ ಮೊಗವ</span>
+      <span class="line">ಕಾಣಲಿಕೆ ಹೊರಹೊರಳಿ ನೋಡುತಿಹ ಕಡಲಣುಗೆ</span>
+      <span class="line">ತಾನೆ ತೋರಲಿ ಎನಗೆ ಸಕಲ ಸಂಪದವ <span class="punct">॥</span>೨<span class="punct">॥</span></span>
+    </div>
+    <div class="stanza-num">|| ೨ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ಹಾವ ಮೇಗಡೆ ಕಣ್ಣಮುಚ್ಚಿ ಪವಡಿಸಿದಂಥ</span>
+      <span class="line">ಪತಿಯನ್ನು ಎವೆಯಿಕ್ಕದೆಯೆ ಪ್ರೀತಿಯಲ್ಲಿ</span>
+      <span class="line">ನೋಡುತಿಹ ಕಮಲಕಣ್ಣವಳೋರೆ ನೋಟಗಳು</span>
+      <span class="line">ಬೀಳುತಿರಲೆನ್ನೆಡೆಗೆ ಸಂತಸವ ತರಲು<span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೩ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ಕೌಸ್ತುಭವನಿಟ್ಟವಗೆ ಮಧುವನ್ನು ಮಡುಹಿದಗೆ</span>
+      <span class="line">ನಿನ್ನ ಕಣ್ಣೋಟಗಳ ಸರವ ತೊಡಿಸಿಹಳೆ!</span>
+      <span class="line">ಕಮಲದಲಿ ನಿಂದಿಹಳೆ ಬಯಸಿದ್ದನೀಯುವಳೆ</span>
+      <span class="line">ತುಸು ಬೀರು ಎನ್ನೆಡೆಗೆ ಮಂಗಳವ ತರುತ! <span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೪ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ರಕ್ಕಸರ ಹಗೆ ಹರಿಯ ಆ ಸೊಬಗಿನೆದೆಯಲ್ಲಿ</span>
+      <span class="line">ಕರಿಮೋಡದಲಿ ಹೊಳೆವ ಸುಳಿಮಿಂಚಿನಂತೆ</span>
+      <span class="line">ಮೆರೆವ ತಾಯೇ ಸಕಲ ಲೋಕದಲಿ ನೀ ಮಾನ್ಯೆ</span>
+      <span class="line">ಒಳ್ಳಿತನು ತೋರೆನಗೆ ಭಾರ್ಗವನ ಕುವರಿ <span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೫ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ಆ ಮದನ ಮುನ್ನ ತಾನಾರ ಪ್ರಭಾವದಲಿ</span>
+      <span class="line">ಸುಲಭದಲಿ ಹರಿಯ ಸನಿಹಕೆ ಸಂದನೋ</span>
+      <span class="line">ಆ ಮೊಸಳೆಮನೆಕಡಲ ಮಗಳ ಕಡೆಗಣ್ಣುಗಳ</span>
+      <span class="line">ಅರೆ ನೋಟವಾದರೂ ಬೀಳಲೆನಗೆ <span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೬ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ಅವಳ ಕಣ್ಣೋಟದಿಂದಿಂದ್ರ ಪದವಿಯ ಪಡೆದ</span>
+      <span class="line">ಹೆಚ್ಚಿಸಿಹುದದುವೆ ಮುರವೈರಿಗಾನಂದ</span>
+      <span class="line">ಅರೆಚಣವು ಬೀಳಲೌ ಇಂದಿರೆಯ ದಿಟ್ಟಿ ಬಿರಿ-</span>
+      <span class="line">-ದಿರುವ ನೈದಿಲೆಯಂಥ ಕಂಗಳಿಂದ! <span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೭ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ಕರುಣೆಯಲೆ ತೋಯ್ದಿರುವದಾವ ನೋಟಗಳಿಂದ</span>
+      <span class="line">ಹಿರಿದಾದ ಸ್ವರ್ಗಪದವಿಗಳು ಸುಲಭದಲೇ</span>
+      <span class="line">ದೊರೆತಾವೊ ಆ ಕಮಲದಲಿ ನೆಲೆಸಿಹಳ ದಿಟ್ಟಿ</span>
+      <span class="line">ಸರಿಯಲೆನ್ನತ್ತ ಬಯಕೆಗಳನ್ನು ಹರಸಿ <span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೮ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ಹರಿಸೆ ಕನಿಕರವೆಂಬ ತಂಗಾಳಿ ಐಸಿರಿಯ</span>
+      <span class="line">ಧಾರೆಯನ್ನೀ ಪುಟ್ಟ ಬಡ ಹಕ್ಕಿಮರಿಗೇ</span>
+      <span class="line">ದೂರಮಾಡುತ ಕೆಡಕುಬೇಗೆಯನು ಬಾಳಿಂದ</span>
+      <span class="line">ಹರಿಯ ಪ್ರೇಮದ ಮಡದಿ ತೊಡೆದು ಕಣ್ಣೀರ <span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೯ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ಮಾತಿನೊಡತೀ ಗರುಡಧ್ವಜನ ಪ್ರೀತಿಯ ಮಡದಿ</span>
+      <span class="line">ಚಂದಿರನ ಮುಡಿದವನ ನಲ್ಲೆ ಶಾಕಂಭರೀ</span>
+      <span class="line">ಜಗವ ಹುಟ್ಟಿಸಿ ನಿಲಿಸಿ ಮುಗಿಸುವಾಟದಿ ನಿಂತೆ</span>
+      <span class="line">ಮೂಲೋಕದೊಡೆಯನಾ ಇನಿಯೆ ಮಣಿವೆ <span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೧೦ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ಫಲವೀವ ಶ್ರುತಿಯನ್ನು ನಮಿಪೆ ಶುಭಕರ್ಮಕ್ಕೆ</span>
+      <span class="line">ಚೆಲುವಗುಣಗಳಕಡಲ ರತಿಯನ್ನು ನಮಿಪೆ</span>
+      <span class="line">ದಳಶತದ ಕಮಲದೊಳಿಹ ಶಕ್ತಿಯನು ನಮಿಪೆ</span>
+      <span class="line">ಏಳಿಗೆಯ ನಾರಾಯಣನ ನಲ್ಲೆಯನ್ನು <span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೧೧ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ಮಣಿಯುವೆನು ನಾ ನಿನಗೆ ಕಮಲಮೊಗದವಳೇ</span>
+      <span class="line">ಮಣಿಯುವೆನು ನಾ ನಿನಗೆ ಪಾಲ್ಗಡಲ ಮಗಳೇ</span>
+      <span class="line">ಮಣಿವೆ ನಾ ಸುಧೆ ಚಂದ್ರರೊಡಹುಟ್ಟಿದವಳೇ</span>
+      <span class="line">ಮಣಿವೆ ನಾರಾಯಣನ ಮನವ ಗೆದ್ದವಳೇ <span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೧೨ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ಹೊನ್ನದಾವರೆ ಪೀಠದಲಿ ಕುಳಿತವಳಿಗೇ</span>
+      <span class="line">ಸಕಲ ಭೂಮಂಡಲವ ಮುನ್ನಡೆಸುವಳಿಗೇ</span>
+      <span class="line">ಎಲ್ಲ ದೇವತೆಗಳಿಗೆ ದಯೆತೋರುವಳಿಗೇ</span>
+      <span class="line">ಶಾರ್ಙ್ಗ ಧನು ಹಿಡಿದವನ ಪ್ರಿಯತಮೆಗೆ ನಮಿಪೇ <span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೧೩ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ನಮಿಪೆ ನಾ ಮುನಿಶ್ರೇಷ್ಠ ಭೃಗುವಿನ ಮಗಳಿಗೇ</span>
+      <span class="line">ನಮಿಪೆ ವಿಷ್ಣುವಿನೆದೆಯಲೇ ನಿಂತವಳಿಗೇ</span>
+      <span class="line">ನಮಿಪೆ ಲಕುಮಿಗೆ ಕಮಲದೊಳು ನೆಲೆಸಿದಳಿಗೇ</span>
+      <span class="line">ನಮಿಪೆ ದಾಮೋದರನ ಮನ ಗೆದ್ದವಳಿಗೇ <span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೧೪ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ಹೊಳಪೆ ಮೈವೆತ್ತವಳೆ ಕಮಲಕಣ್ಣವಳೇ</span>
+      <span class="line">ಇಳೆಯಲೆಲ್ಲರ ಹೆತ್ತ ದೇವಿಯೇ ನಮಿಪೆ</span>
+      <span class="line">ಭಲೆ! ದೇವತೆಗಳೆಲ್ಲರಿಂದ ಪೂಜಿತೆ ಗೋ-</span>
+      <span class="line">-ಪಾಲ ನಂದನ ಮಗನ ನಲ್ಲೆಗೇ ಮಣಿವೆ <span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೧೫ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ಅರಿವಿನಿಂದ್ರಿಯಗಳಿಗೆ ಆನಂದ ತರುವ ಐ-</span>
+      <span class="line">-ಸಿರಿಯ ಸಾಮ್ರಾಜ್ಯವನ್ನೀವ ತಾವರೆಯ</span>
+      <span class="line">ಅರಳುಗಣ್ಣಿಯೆ ಕೇಡುಗಳನೆಲ್ಲ ಕಳೆಯುವಳೆ</span>
+      <span class="line">ಅರೆಚಣವು ಬಿಡದೆನ್ನ ಜೊತೆಯಲಿರು ತಾಯೇ <span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೧೬ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ಕಣ್ಣಿನೋರೆಯ ನೋಟದಿಂದಲೇ ಸೇವಿಸುವ</span>
+      <span class="line">ತೊಂಡನೀತನ ಸಕಲ ಬಯಕೆಗಳ ನೀಗಿ</span>
+      <span class="line">ತಣಿಸುವಾ ದೇವಿ ಮೈ ಮನಸು ಮಾತುಗಳಲ್ಲೆ</span>
+      <span class="line">ವಿಷ್ಣುವೆದೆಯಲ್ಲಿ ನಿಂತವಳನೇ ಭಜಿಪೆ <span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೧೭ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ಕಮಲದಲಿ ಕುಳಿತವಳೆ ಕಮಲವನೆ ಪಿಡಿದವಳೆ</span>
+      <span class="line">ಪರಿಮಳದಹಾರ ಬಿಳಿಸೀರೆಯಲಿ ಮೆರೆಯುವಳೆ</span>
+      <span class="line">ಭಗವತೀ ಹರಿಯೊಡತಿ ಸೊಬಗಿ ನೆಮ್ಮದಿಯನ್ನು</span>
+      <span class="line">ಮೂಲೋಕಕೀಯುವಳೆ ನನ್ನ ಕಾಪಾಡೇ <span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೧೮ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ಹೊನ್ನಗಡಿಗೆಗಳನ್ನು ಹೊತ್ತ ದಿಗ್ಗಜಗಗಳಾ</span>
+      <span class="line">-ರನ್ನು ಪರಿಶುದ್ಧ ಜಲದಲಭಿಷೇಚಿಸಿವೆ</span>
+      <span class="line">ಮುನ್ನಜಾವದಿ ನಮಿಪೆ ಜಗದಂಬೆ ಕಡಲಣುಗೆ</span>
+      <span class="line">ಇನ್ನುಲೋಕವ ಕಾಯ್ದವನ ಮಡದಿಯನ್ನು <span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೧೯ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ಕಮಲಗಣ್ಣನ ಮಡದಿ ಕಮಲೆ ನೀ ಕಾರುಣ್ಯ-</span>
+      <span class="line">-ವಮರಿಕೊಂಡಿರುವೋರೆಗಣ್ಣನೋಟದಲೇ</span>
+      <span class="line">ಒಮ್ಮೆ ನೋಡಮ್ಮ! ಈ ಗತಿಗೇಡಿಯನು ಮೊದಲು</span>
+      <span class="line">ನಿಮ್ಮ ಸಹಜದ ದಯೆಗೆ ಗುರಿಮಾಡಿ ಬೇಗ! <span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೨೦ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ದೇವಿ ಕಾಪಾಡೆ ಜಗದೀಶ್ವರಿ ಲೋಕಮಾತೇ</span>
+      <span class="line">ತಾವರೆಯ ಕಣ್ಣವನೊಡತಿಯೇ ಮಂಗಳಾಂಗೀ</span>
+      <span class="line">ನೀವು ಆಸರೆಯ ಬೇಡುತಲಿ ಬಂದೀ ಬಡವ</span>
+      <span class="line">-ನಿವನನನುದಿನ ನೋಡೆ ಕಡೆಗಣ್ಣಲೇ <span class="punct">॥೨೧॥</span></span>
+    </div>
+    <div class="stanza-num">|| ೨೧ ||</div>
+  </div>
+
+  <div class="stanza">
+    <div class="stanza-lines">
+      <span class="line">ಮೂರು ವೇದಗಳ ಸಾಕಾರವಹ ರಮೆಯನ್ನು</span>
+      <span class="line">ಮೂರು ಲೋಕದ ತಾಯ ಸ್ತುತಿಮಾಡಿದವರು</span>
+      <span class="line">ಹಿರಿಯ ಐಸಿರಿ ಗುಣಗಳನೆಲ್ಲ ಗಳಿಸುತ್ತ</span>
+      <span class="line">ತಿರೆಯ ತಿಳಿದವರ ಮನ್ನಣೆಯ ಹೊಂದುವರು <span class="punct">||</span></span>
+    </div>
+    <div class="stanza-num">|| ೨೨ ||</div>
+  </div>
+
+</div>
+
+<div class="attribution">
+  <div class="author">— ಹಂಸಾನಂದಿ</div>
+  <div class="author-iast">Hamsānandi</div>
+  <div class="image-credit">
+    <strong>ಟಿಪ್ಪಣಿ:</strong> ಆದಿಶಂಕರರ ಕನಕಧಾರಾ ಸ್ತೋತ್ರದ ಕನ್ನಡ ಛಂದೋಬದ್ಧ ಅನುವಾದ.
+  </div>
+</div>
+
+<hr class="section-divider">
+<footer>
+  <a href="https://hamsanandi.github.io/poetry/">ಛಂದೋಬದ್ಧ ಕಾವ್ಯ</a> &nbsp;·&nbsp; hamsanandi.github.io
+</footer>
+
+</body>
+</html>
