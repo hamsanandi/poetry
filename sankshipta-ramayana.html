@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ಸಂಪೂರ್ಣ ಸಂಕ್ಷೇಪ ರಾಮಾಯಣ</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+Kannada:wght@400;600&family=Noto+Serif+Kannada:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold: #6b4400; --gold-light: #4a2e00; --gold-dim: #c49030;
+  --bg: #ffffff; --section-bg: #fdf8f0; --header-bg: #f5e8cc;
+  --border: #e0c88a; --border-light: #c9a850;
+  --text: #1a1208; --meta: #7a5c20;
+  --accent-light: #e8c87a;
+}
+body {
+  font-family: 'Noto Serif Kannada', serif;
+  background: var(--bg); color: var(--text);
+  max-width: 680px; margin: 0 auto;
+  padding: 0 24px 60px; font-size: 16px; line-height: 1.75;
+}
+
+/* Nav */
+.breadcrumb {
+  padding: 16px 0 0;
+  font-family: 'Cinzel', serif; font-size: 0.7rem;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--meta);
+}
+.breadcrumb a { color: var(--gold-dim); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; color: var(--gold); }
+.breadcrumb span { margin: 0 6px; }
+
+/* Header */
+.poem-header {
+  text-align: center; padding: 28px 0 24px;
+  border-bottom: 1px solid var(--border); position: relative; margin-top: 8px;
+}
+.poem-header::after {
+  content: ''; display: block; height: 2px; width: 100px; margin: 0 auto;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%);
+}
+.poem-title {
+  font-family: 'Noto Serif Kannada', serif; font-size: 1.6rem; font-weight: 600;
+  color: var(--gold-light); line-height: 1.35; margin-bottom: 6px;
+}
+.poem-title-roman {
+  font-family: 'EB Garamond', serif; font-size: 1rem; font-style: italic;
+  color: var(--meta); margin-bottom: 14px;
+}
+.poem-tags { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+.tag {
+  display: inline-block; padding: 2px 10px;
+  font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.75rem;
+  border: 1px solid var(--border-light); border-radius: 4px;
+  color: var(--gold-light); background: var(--accent-light);
+}
+
+/* Context */
+.context {
+  margin: 24px 0 0; padding: 14px 18px;
+  background: var(--section-bg); border-left: 3px solid var(--gold-dim);
+  border-radius: 0 5px 5px 0;
+  font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.88rem;
+  color: var(--meta); line-height: 1.8;
+}
+.context-en {
+  margin-top: 8px;
+  font-family: 'EB Garamond', serif; font-size: 0.88rem; font-style: italic;
+  color: var(--meta); line-height: 1.7;
+}
+
+/* Painting */
+.painting-wrap {
+  margin: 28px 0 0;
+  border: 1px dashed var(--border-light);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--section-bg);
+}
+.painting-img {
+  width: 100%; display: block;
+  border-radius: 6px 6px 0 0;
+}
+.painting-caption {
+  padding: 10px 16px; font-family: 'Noto Sans Kannada', sans-serif;
+  font-size: 0.78rem; color: var(--meta); text-align: center;
+  border-top: 1px solid var(--border); line-height: 1.6;
+}
+.painting-caption em { font-family: 'EB Garamond', serif; font-style: italic; }
+
+/* Poem body */
+.poem-body { margin-top: 32px; }
+.stanza { margin-bottom: 36px; }
+.stanza-lines {
+  font-family: 'Noto Serif Kannada', serif;
+  font-size: 1.05rem; line-height: 2.1;
+  color: var(--text);
+}
+.line { display: block; }
+.stanza-num {
+  display: inline-block; margin-top: 4px;
+  font-family: 'EB Garamond', serif; font-size: 0.82rem;
+  color: var(--gold-dim); font-style: italic; letter-spacing: 0.05em;
+}
+.punct { color: var(--gold-dim); }
+
+/* Attribution */
+.attribution {
+  margin-top: 36px; padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.author {
+  font-family: 'Noto Serif Kannada', serif; font-size: 1rem;
+  font-weight: 600; color: var(--gold-light); text-align: right;
+}
+.author-iast {
+  font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--meta); text-align: right;
+  margin-top: 2px;
+}
+.image-credit {
+  margin-top: 14px; font-family: 'Noto Sans Kannada', sans-serif;
+  font-size: 0.8rem; color: var(--meta); line-height: 1.7;
+}
+.image-credit strong { color: var(--gold-light); }
+
+/* Footer */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 36px 0 20px;
+}
+footer {
+  text-align: center; color: var(--meta); font-size: 0.78em;
+  font-family: 'Noto Sans Kannada', sans-serif;
+}
+a { color: var(--gold-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="https://hamsanandi.github.io/poetry/">ಛಂದೋಬದ್ಧ ಕಾವ್ಯ</a>
+  <span>›</span>
+  ಸಂಪೂರ್ಣ ಸಂಕ್ಷೇಪ ರಾಮಾಯಣ
+</div>
+
+<div class="poem-header">
+  <div class="poem-title">ಸಂಪೂರ್ಣ ಸಂಕ್ಷೇಪ ರಾಮಾಯಣ</div>
+  <div class="poem-title-roman">Sampūrṇa Saṅkṣepa Rāmāyaṇa</div>
+  <div class="poem-tags">
+    <span class="tag">ಮಾತ್ರಾಮಲ್ಲಿಕಾಮಾಲೆ</span>
+    <span class="tag">ರಾಮಾಯಣ</span>
+  </div>
+</div>
+
+<div class="context">
+  ವಾಲ್ಮೀಕಿ ಮಹರ್ಷಿ 24000 ಶ್ಲೋಕಗಳ ರಾಮಾಯಣವನ್ನು ಬರೆದ ನಂತರ ಅದು ಭರತವರ್ಷದ ಎಲ್ಲ ಭಾಷೆಗಳಲ್ಲಿಯೂ ಅದರ ಕಥೆಯನ್ನ ಮತ್ತೆ ಮತ್ತೆ ಹೇಳಿದವರ ಸಂಖ್ಯೆ ನೂರಾರು, ಸಾವಿರಾರು. ಅಷ್ಟೇಕೆ, ಹೊರದೇಶಗಳ ಭಾಷೆಗಳಲ್ಲೂ ರಾಮಾಯಣವು ಮತ್ತೆ ಮತ್ತೆ ಹೇಳಲ್ಪಟ್ಟಿದೆ.
+
+  ರಾಮಾಯಣದ ಬಾಲಕಾಂಡದಲ್ಲೇ ನೂರು ಶ್ಲೋಕಗಳ ಸಂಕ್ಷಿಪ್ತ ರಾಮಾಯಣವಿದೆ. ಮಹಾಭಾರತದ ವನಪರ್ವದಲ್ಲಿ 700 ಶ್ಲೋಕಗಳ ರಾಮೋಪಾಖ್ಯಾನವಿದೆ. ಇದಲ್ಲದೆ ಇನ್ನೂ ಮಹಾಭಾರತದಲ್ಲಿ ಮತ್ತೆರಡು ಕಡೆ ರಾಮಾಯಣದ ಪುಟ್ಟ ರೂಪಗಳಿವೆ.
+
+  ರಾಮಾಯಣದ ಸುಂದರಕಾಂಡದಲ್ಲಿ, ಹನುಮಂತ ಲಂಕೆಗೆ ಬಂದು ಸೀತೆಯನ್ನು ಕಂಡಾಗ, ತನ್ನ ವಾನರ ರೂಪವನ್ನು ಕಂಡರೆ, ತನ್ನನ್ನೂ ರಾವಣನ ಮಾಯೆಯಿರಬಹುದೆಂದು ಭಾವಿಸಿ ಹೆದರಬಹುದೆಂದು, ಮರದ ಮೇಲೆ ಕುಳಿತು ಅಲ್ಲಿಯವರೆಗೆ ಆದ ರಾಮ ಸೀತೆಯರ ಕಥೆಯನ್ನು 31 ಶ್ಲೋಕಗಳಲ್ಲಿ ಹೇಳುತ್ತಾನೆ. ಅದನ್ನು 9 ಮಾತ್ರಾ ಮಲ್ಲಿಕಾಮಾಲೆಯ ಚೌಪದಿಗಳಲ್ಲಿ ಅನುವಾದಿಸಿ, ಅದರ ಮುಂದಿನ ಕಥೆಯನ್ನು ಮತ್ತೆ 10 ಚೌಪದಿಗಳಲ್ಲಿ ನನ್ನ ಮಾತುಗಳಲ್ಲೇ ಬರೆದು, ಕೊನೆಗೆ ಅಯೋಧ್ಯೆಗೆ ಮರಳುತ್ತಿರುವ ರಾಮನ ಪ್ರಸ್ತಾಪವನ್ನು ಒಳಗೊಳ್ಳುವಂತಹ ಮಂಗಳವೊಂದನ್ನು ಸೇರಿಸಿ, 20 ಚೌಪದಿಗಳ ಈ ಸಂಕ್ಷೇಪರಾಮಾಯಣವನ್ನು ನಿಮ್ಮ ಮುಂದೆ ಇಟ್ಟಿದ್ದೇನೆ. ಇದು ರಾಮಪಟ್ಟಾಭಿಷೇಕದವರೆಗಿನ ಕಥೆಯನ್ನು ಒಳಗೊಂಡಿದೆ.
+
+  ಮಾತ್ರಾಮಲ್ಲಿಕಾಮಾಲೆ ಛಂದಸ್ಸನ್ನು ನೀವು “ದೋಣಿ ಸಾಗಲಿ ಮುಂದೆ ಹೋಗಲಿ ದೂರ ತೀರವ ಸೇರಲಿ” ಎಂಬ ಧಾಟಿಯಲ್ಲಿ ಓದಿಕೊಳ್ಳಬಹುದು.
+
+  ಓದಿ, ಹಿಡಿಸಿದರೆ ಮಿತ್ರರೊಡನೆ ಹಂಚಿಕೊಳ್ಳಿ
+</div>
+
+<div class="painting-wrap">
+  <img src="panchavatiyalli-kadeya-dina-painting.jpg" class="painting-img">
+  <div class="painting-caption">
+    <em>Sampūrṇa Saṅkṣepa Rāmāyaṇa</em>
+  </div>
+</div>
+
+<div class="poem-body">
+
+<!-- STANZAS START -->
+
+<div class="stanza"><div class="stanza-lines">
+<span class="line">ಹಿರಿಯದಾ ಇಕ್ಷ್ವಾಕು ವಂಶದಲರಸ ದಶರಥನಿದ್ದನು</span>
+<span class="line">ಹಿರಿಯ ಪುಣ್ಯವು ಕೀರ್ತಿಯಗಣಿತ ರಥದ ಸೈನ್ಯದ ಒಡೆಯನು</span>
+<span class="line">ಅರಸುಗಳೊಳಗ್ಗಳನು ಗುಣದಲಿ ತಪದಲೋ ಋಷಿಸಮನವ <span class="punct">|</span></span>
+<span class="line">ಅರಸುಕುಲದಲಿ ಜನಿಸಿದವ ತಾನಿಂದ್ರ ಸಮನೋ ಬಲದಲಿ <span class="punct">||</span></span>
+</div><div class="stanza-num">|| ೧ ||</div></div>
+
+<div class="stanza"><div class="stanza-lines">
+<span class="line">ಕರುಣೆಯವನದಪಾರ ಹಿಂಸೆಯನೆಂದು ನೆಚ್ಚದ ಗರಿಮೆಯ</span>
+<span class="line">ನರಪನಿಕ್ಷ್ವಾಕುಗಳ ಮೊದಲಿಗ ಶುಭಕರನು ಸಿರಿವಂತನು</span>
+<span class="line">ಅರಸು ಲಕ್ಷಣದಿಂದ ಮೆರೆವನು ಬುವಿಗೆ ಮಂಗಳಕಾರನು</span>
+<span class="line">ಪರರ ನಲಿವಲೆ ನಲಿವ ಲೋಕದ ನಾಲ್ಕೆಡೆಯಲೂ ವಿಶ್ರುತ <span class="punct">||</span></span>
+</div><div class="stanza-num">|| ೨ ||</div></div>
+
+<div class="stanza"><div class="stanza-lines">
+<span class="line">ಅವನ ಹಿರಿಮಗ ರಾಮ ಚಂದ್ರನಹೋಲ್ವ ಮೊಗದವ ಕಣ್ಮಣಿ</span>
+<span class="line">ಅವನೊ ತಿಳಿವಲಿ ಜ್ಞಾನಿ ಬಿಲ್ಲನು ಹಿಡಿದವರಲವ ಮೊದಲಿಗ</span>
+<span class="line">ಅವನೆ ಕಾಯ್ವನು ತನ್ನವರನಾಸರೆಯ ಬೇಡುವರೆಲ್ಲರ <span class="punct">|</span></span>
+<span class="line">ಅವನು ಧರ್ಮವನೆತ್ತಿಹಿಡಿವನು ಹಗೆಗಳನು ಬಲು ಕಾಡುವ <span class="punct">||</span></span>
+</div><div class="stanza-num">|| ೩ ||</div></div>
+
+<div class="stanza"><div class="stanza-lines">
+<span class="line">ದಿಟದ ಹಾದಿಯ ಹಿಡಿದ ವೀರನು ವೃದ್ಧ ತಂದೆಯ ಮಾತನು</span>
+<span class="line">ಕಟುವೆನದೆ ಪಾಲಿಸಲು ಹೆಂಡತಿ ತಮ್ಮನೊಡನೆಯೆ ಹೋದನು</span>
+<span class="line">ಅಟವಿಯೊಳು ವಾಸಿಸಲು; ಬಯಸಿದ ವೇಷ ತಾಳುವ ರಕ್ಕಸ <span class="punct">|</span></span>
+<span class="line">ಭಟರು ಕೆಚ್ಚುಳ್ಳವರು ಹಲವರ ತರಿದನಾತನು ಕಾಡೊಳು <span class="punct">||</span></span>
+</div><div class="stanza-num">|| ೪ ||</div></div>
+
+<div class="stanza"><div class="stanza-lines">
+<span class="line">ಜನಸ್ಥಾನದೊಳಾದ ಖರದೂಷಣರ ವಧೆಯನು ಕೇಳಿರೆ</span>
+<span class="line">ಮುನಿದ ರಾವಣ ಮಿಗದ ರೂಪದ ಮೋಸವನು ತಾ ಹೂಡುತ</span>
+<span class="line">ಮನೆಯೊಳೋರ್ವಳೆ ನೇರ್ಪು ಸೌಶೀಲ್ಯಕ್ಕೆ ಆಗರವೆನಿಸಿದ <span class="punct">|</span></span>
+<span class="line">ಜನಕಸುತೆ ಸೀತೆಯನು ರಕ್ಕಸನಪಹರಿಸಿ ಸೆಳೆದೊಯ್ದನು <span class="punct">||</span></span>
+</div><div class="stanza-num">|| ೫ ||</div></div>
+
+<div class="stanza"><div class="stanza-lines">
+<span class="line">ಮಡದಿಯನ್ನರಸುತಲಿ ವನದೊಳಗಾತ ಕಪಿ ಸುಗ್ರೀವನ</span>
+<span class="line">ಗೆಳೆತನವ ಗಳಿಸಿದನು ವಾಲಿಯ ಸಂಹರಿಸುತಲಿ ರಾಜ್ಯವ</span>
+<span class="line">ಉಳಿಸಿಕೊಟ್ಟಿರೆ ಕಪಿಗಳರಸನು ಹಲವು ರೂಪವ ಹೊಂದುವ <span class="punct">|</span></span>
+<span class="line">ಗಡವಪಡೆಯನು ಕಳುಹಿಸಿದ ಸೀತೆಯನು ಹುಡುಕಿರಿಯೆನ್ನುತ <span class="punct">||</span></span>
+</div><div class="stanza-num">|| ೬ ||</div></div>
+
+<div class="stanza"><div class="stanza-lines">
+<span class="line">ದಿಕ್ಕುದಿಕ್ಕುಗಳಲ್ಲಿ ಸೀತೆಯ ಹುಡುಕ ಹೊರಟಿಹ ಲಕ್ಷಕೂ</span>
+<span class="line">ಮಿಕ್ಕಿರುವ ವಾನರರು ಸಿಕ್ಕಿದ ಹಕ್ಕಿ ಹೇಳಿದ ಮಾತನೇ</span>
+<span class="line">ಪಕ್ಕನೇ ನಂಬುತ್ತ ಕಳುಹಲು ತಾನು ಯೋಜನ ನೂರನು <span class="punct">|</span></span>
+<span class="line">ಗಕ್ಕೆನುತ ಹಾರಿದೆನು ಸಾಗರ ದಾಟಿ ಸೀತೆಯ ಕಂಡೆನು <span class="punct">||</span></span>
+</div><div class="stanza-num">|| ೭ ||</div></div>
+
+<div class="stanza"><div class="stanza-lines">
+<span class="line">ರಾಮನಾ ನುಡಿಯಲ್ಲಿ ಮುನ್ನವೆ ನಾನು ತಿಳಿದಿಹ ರೂಪದ</span>
+<span class="line">ಪ್ರೇಮದಾ ಸೆಲೆಯನ್ನು ಸಿರಿದೇವಿಯನೆ ಎದುರಲಿ ಕಂಡೆನು</span>
+<span class="line">ಸುಮ್ಮನಾಗಿರೆ ಇಷ್ಟು ನುಡಿದಾಮೇಲೆ ಹನುಮನು ಮರದಲಿ <span class="punct">|</span></span>
+<span class="line">ರಾಮನರಸಿಯು ದಿಟ್ಟಿಯಚ್ಚರಿಯಲ್ಲಿ ಮೇಲಕೆ ನೆಟ್ಟಳು <span class="punct">||</span></span>
+</div><div class="stanza-num">|| ೮ ||</div></div>
+
+<div class="stanza"><div class="stanza-lines">
+<span class="line">ಹಲವು ಕಾಲವು ನೆನೆಯುತಿಹ ಜಾನಕಿಯು ರಾಮನ ಸಂತತ</span>
+<span class="line">ಕೇಳಿರಲು ಶ್ರೀರಾಮಚರಿತೆಯ ತುರುಸಿನಿಂದಲೆ ಹರ್ಷದಿ</span>
+<span class="line">ಬಲವನೆಡವನು ಮೇಲೆಕೆಳಗಡೆ ಪರಿಕಿಸುತ ತಾ ನೋಡಿರೆ <span class="punct">|</span></span>
+<span class="line">ಅಲ್ಲಿ ಕಂಡಳು ಸೂರ್ಯನಂತೆಯೆ ಹೊಳೆವ ಹನುಮನ ಮರದಲಿ <span class="punct">||</span></span>
+</div><div class="stanza-num">|| ೯ ||</div></div>
+
+<div class="stanza"><div class="stanza-lines">
+<span class="line">ಏನಿದೇನಿದು! ರಾವಣನ ರಾಕ್ಷಸೀ ಮಾಯೆಯೊ? ನೆಚ್ಚಲೇ?</span>
+<span class="line">ಎನ್ನುತಿರೆ ಜಾನಕಿಯ ಮನ ಹನುಮಂತ ಮೆಲ್ಲನೆ ಕಾಲಿಗೆ</span>
+<span class="line">ತಾನೆ ನಮಿಸುತ ರಾಮ ನೀಡಿದ ಮುದ್ರೆಯುಂಗುರ ತೋರಲು <span class="punct">|</span></span>
+<span class="line">ಶಾನೆ ಸಂತಸದಲ್ಲಿ ನಲ್ಲನ ನೆನೆದು ಕಣ್ಣೀರಿಟ್ಟಳು! <span class="punct">||</span></span>
+</div><div class="stanza-num">|| ೧೦ ||</div></div>
+
+<div class="stanza"><div class="stanza-lines">
+<span class="line">ರಾಮನೊಸಗೆಯ ಕೇಳಿ ಸೀತೆಯು ನೀಡೆ ಚೂಡಾಮಣಿಯನು</span>
+<span class="line">ರಾಮನಾಮವ ಜಪಿಸಿ ವನವನು ಧ್ವಂಸ ಮಾಡಿರೆ ಹನುಮನು</span>
+<span class="line">ತಾಮಸಿಸದೇ ಭಟರು ಎಳೆದೊಯ್ದಿರಲು ರಾವಣನೆದುರಿಗೆ <span class="punct">|</span></span>
+<span class="line">ನೇಮಿಸಿದನವ ದೂತನಿಗೆ ಅವಮಾನಿಸಲು ಬಾಲಕೆ ಬೆಂಕಿಯ <span class="punct">||</span></span>
+</div><div class="stanza-num">||
