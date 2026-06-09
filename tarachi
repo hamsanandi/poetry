@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="kn" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ತರಚಿ ಪುಷ್ಪೋಪಾಖ್ಯಾನ   — Hamsanandi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+Kannada:wght@400;600&family=Noto+Serif+Kannada:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --gold: #8b5e1a; --gold-light: #6b4510; --gold-dim: #a0783a;
+  --bg: #ffffff; --section-bg: #fdf9f3; --header-bg: #f5ede0;
+  --border: #d4c5a9; --border-light: #c0aa88;
+  --text: #1a1208; --meta: #8a7055;
+}
+
+body {
+  font-family: 'EB Garamond', serif;
+  background: var(--bg); color: var(--text);
+  max-width: 860px; margin: 0 auto;
+  padding: 0 0 60px; font-size: 16px; line-height: 1.6;
+}
+
+/* ── Top nav bar ── */
+.site-nav { background: var(--header-bg); border-bottom: 1px solid var(--border); padding: 0 20px; display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 42px; position: sticky; top: 0; z-index: 100; }
+.nav-home { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.2em; color: var(--gold); text-decoration: none; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; }
+.nav-home.kn { font-family: 'Noto Serif Kannada', serif; letter-spacing: 0.05em; text-transform: none; font-size: 0.88rem; }
+.nav-home:hover { text-decoration: underline; }
+.nav-links { display: flex; align-items: center; gap: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-link { font-family: 'EB Garamond', serif; font-size: 0.78rem; color: var(--meta); text-decoration: none; padding: 0 10px; line-height: 42px; white-space: nowrap; border-left: 1px solid var(--border); transition: color 0.15s, background 0.15s; }
+.nav-link:first-child { border-left: none; }
+.nav-link:hover { color: var(--gold); background: rgba(139,94,26,0.06); }
+.nav-link.active-section { color: var(--gold); font-weight: 600; }
+.nav-link.kn { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.72rem; }
+
+/* ── Page header ── */
+.page-header {
+  text-align: center; padding: 36px 20px 28px;
+  border-bottom: 1px solid var(--border); position: relative; margin-bottom: 32px;
+}
+.page-header::after {
+  content: ''; display: block; height: 2px; width: 120px; margin: 0 auto;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%);
+}
+.poem-title {
+  font-family: 'Noto Serif Kannada', serif; font-size: 2rem;
+  color: var(--gold-light); font-weight: 600; margin-bottom: 4px;
+}
+.poem-roman {
+  font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--gold-dim); margin-bottom: 14px; display: block;
+}
+.poem-meta {
+  font-family: 'EB Garamond', serif; font-size: 0.92rem;
+  color: var(--meta); font-style: italic; line-height: 1.7;
+}
+.poem-meta span {
+  display: inline-block; margin: 0 8px;
+}
+.poem-meta .sep { color: var(--border-light); }
+
+/* ── Poem body ── */
+.poem-wrap {
+  max-width: 620px; margin: 0 auto; padding: 0 20px 40px;
+}
+
+.stanza {
+  margin-bottom: 2rem;
+  padding: 18px 22px;
+  background: var(--section-bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: 2px;
+}
+.stanza-lines {
+  font-family: 'Noto Serif Kannada', serif;
+  font-size: 1.08rem; line-height: 2;
+  color: var(--text);
+}
+.stanza-lines .line { display: block; }
+.stanza-num {
+  display: block; text-align: right;
+  font-family: 'Noto Serif Kannada', serif;
+  font-size: 0.82rem; color: var(--gold-dim);
+  margin-top: 8px; padding-top: 6px;
+  border-top: 1px dashed var(--border);
+}
+
+/* ── Colophon ── */
+.colophon {
+  text-align: right; padding: 0 20px;
+  font-family: 'EB Garamond', serif; font-style: italic;
+  font-size: 0.85rem; color: var(--meta); opacity: 0.85;
+  margin-top: 8px;
+}
+
+/* ── Footer ── */
+.section-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 48px 20px 0; }
+footer { text-align: center; color: var(--meta); margin-top: 24px; font-size: 0.82em; }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .poem-title { font-size: 1.5rem; }
+  .stanza { padding: 14px 16px; }
+  .stanza-lines { font-size: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site navigation">
+  <a class="nav-home kn" href="https://hamsanandi.github.io/">ಹಂಸಾನಂದಿ</a>
+  <div class="nav-links">
+    <a class="nav-link kn" href="https://hamsanandi.github.io/compositions/">ರಚನೆಗಳು</a>
+    <a class="nav-link kn" href="https://hamsanandi.github.io/articles/">ಲೇಖನಗಳು</a>
+    <a class="nav-link kn" href="https://hamsanandi.github.io/books/">ಪುಸ್ತಕಗಳು</a>
+    <a class="nav-link kn active-section" href="https://hamsanandi.github.io/poetry/">ಛಂದೋಬದ್ಧ ಕಾವ್ಯ</a>
+    <a class="nav-link kn" href="https://hamsanandi.github.io/stage-productions/">ರಂಗಪ್ರಯೋಗಗಳು</a>
+    <a class="nav-link kn" href="https://hamsanandi.github.io/gamaka-vachana/">ಗಮಕ ವಾಚನ</a>
+    <a class="nav-link kn" href="https://hamsanandi.github.io/translations/">ಅನುವಾದಗಳು</a>
+    <a class="nav-link kn" href="https://hamsanandi.github.io/reviews/">ವಿಮರ್ಶೆಗಳು</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <h1 class="poem-title">ತರಚಿ ಹೂವು</h1>
+  <span class="poem-roman">Tarachi Hūvu</span>
+  <div class="poem-meta">
+    <span>ಭಾಮಿನಿ ಸರಳ ಷಟ್ಪದಿ</span>
+    <span class="sep">·</span>
+    <span>೧೬ ಪದ್ಯಗಳು</span>
+    <span class="sep">·</span>
+    <span>ರಾಮಪ್ರಸಾದ್ ಕೆ.ವಿ.</span>
+  </div>
+</div>
+
+<div class="poem-wrap">
+
+  <div class="stanza">
+    <span class="stanza-lines">
+      <span class="line">ಕೇಳಿರೀಗಲೆ ತರಚಿ ಹೂವಿನ</span>
+      <span class="line">ಕೇಳೆ ಸೊಗವನ್ನೀವ ಕಥೆಯನು</span>
+      <span class="line">ವೇಳೆ ಕಳೆಯಲು ಮಹಾಗಂಧಪುರಾಣದಲ್ಲಿ ಶಿವ ।</span>
+      <span class="line">ಲೀಲೆಯಿಂದಲಿ ಪತ್ನಿಯ ಶಿರ-</span>
+      <span class="line">ಶ್ಶೂಲೆಯನು ಕಳೆಯಲಿಕೆ ತಂದನು</span>
+      <span class="line">ಫಾಲನೇತ್ರನೆ ಹೆಸರು ಕೊಟ್ಟಿಹ ಹೆಗ್ಗಳಿಕೆಯಿದಕೆ ॥</span>
+    </span>
+    <span class="stanza-num">॥೧॥</span>
+  </div>
+
+  <div class="stanza">
+    <span class="stanza-lines">
+      <span class="line">ಮಾತನಾಡದೆ ಒಮ್ಮೆ ಶೈಲಜೆ</span>
+      <span class="line">ಕೂತಿರಲು ಮನೆಯಲ್ಲಿ ಭೈರವ</span>
+      <span class="line">"ಪಾತು! ನುಡಿಯುತ್ತಿಲ್ಲವೇಕೆ"ನೆ ಮುಚ್ಚುಗಣ್ಣಲ್ಲೆ ।</span>
+      <span class="line">"ಈ ತಲೆಯನೋವನ್ನು ತಾಳೆನು</span>
+      <span class="line">ಏತಕಿಲ್ಲೈದಿಹಿರಿ! ನಡೆಯಿರಿ</span>
+      <span class="line">ಭೂತಗಣಗಳ ಕೂಡೆ"ಯೆಂದಳು ಕೋಪದಲಿ ಲಲಿತೆ ॥</span>
+    </span>
+    <span class="stanza-num">॥೨॥</span>
+  </div>
+
+  <div class="stanza">
+    <span class="stanza-lines">
+      <span class="line">ಹೆರಳಿನಲಿ ಮುಡಿದಿರುವ ಮಲ್ಲಿಗೆ-</span>
+      <span class="line">ಯರಳು ಕೇದಗೆ ಕೆಂಡಸಂಪಿಗೆ</span>
+      <span class="line">ಸರದಿ ಕೋದಿರುವಂತಿಗೆಯ ಪರಿಮಳದ ಸುಳಿಯಲೆಗೆ |</span>
+      <span class="line">ಶಿರದ ಸುತ್ತಲು ಗುಯ್ಗುಡುವ ಮಧು-</span>
+      <span class="line">ಕರಗಳಿಂದಾಗುತಿಹ ಕೋಟಲೆ</span>
+      <span class="line">ಗಿರಿಜೆ ತಾಳುವಳೆಂತು? ಪೇಳಿರಿಯೆಂದಳೋರ್ವ ಸಖಿ ॥</span>
+    </span>
+    <span class="stanza-num">॥೩॥</span>
+  </div>
+
+  <div class="stanza">
+    <span class="stanza-lines">
+      <span class="line">ಹಳದಿ ಬಿಳುಪಿನ ಭಾರದಾ ಹೂ-</span>
+      <span class="line">ಗಳನೆ ದಿನವೂ ಮುಡಿಯೆ ಗೌರಿಯು</span>
+      <span class="line">ಗಳಿಸಲಿಕ್ಕೇನಿಹುದು ತಲೆಭಾರವನು ಬಿಟ್ಟೆನುತ ।</span>
+      <span class="line">ಹಳಹಳಿಸೆ ಮತ್ತೊಬ್ಬ ಸಖಿ ತಾ</span>
+      <span class="line">ಕಳವಳಿಸಿ ಹೊರಟಿಹನು ಹರ ಹೂ-</span>
+      <span class="line">ಗಳನು ಮಡದಿಯು ಮೆಚ್ಚುವಂತೆಯೆ ತಾನೆ ತಹೆನೆಂದು ॥</span>
+    </span>
+    <span class="stanza-num">॥೪॥</span>
+  </div>
+
+  <div class="stanza">
+    <span class="stanza-lines">
+      <span class="line">ಸತಿಯ ಮುಡಿಯಲಿ ಹಲವು ಬಣ್ಣದ-</span>
+      <span class="line">ಲತಿಶಯದಿ ಮೆರೆಯಲಿಕೆ ಹೂಗಳ-</span>
+      <span class="line">ನತಿಯ ವೇಗದಿ ತರಲುಹೊರಟನು ಬುಟ್ಟಿಯನು ಹಿಡಿದು ।</span>
+      <span class="line">ಗತಿಯದುಂಟೇ ಲೋಕದೊಳಗಡೆ</span>
+      <span class="line">ಪತಿಯು ಯಜಮಾನತಿಯ ಮನದಾ-</span>
+      <span class="line">ಣತಿಯ ಪಾಲಿಸದಿರಲು ಬಹುದೇಯೆನುತಲಾದಿಗುರು ॥</span>
+    </span>
+    <span class="stanza-num">॥೫॥</span>
+  </div>
+
+  <div class="stanza">
+    <span class="stanza-lines">
+      <span class="line">ಸುತ್ತುತಲಿ ಜಗವೆಲ್ಲ ಬಂದನು</span>
+      <span class="line">ಇತ್ತ ಕಪಿಲಾರಣ್ಯದಲಿ ತಾ-</span>
+      <span class="line">ನೆತ್ತ ನೋಡಲು ಹೆಮ್ಮರಗಳಿರೆ ಶರ್ವ ನಿಬ್ಬೆರಗು ।</span>
+      <span class="line">ಎತ್ತರಕೆ ಕಣ್ಣೋಡಿಸಿರೆ ಕಾ-</span>
+      <span class="line">ಣುತ್ತಿರದೆ ಹೂವೊಂದು ಮನಕಾ-</span>
+      <span class="line">ಗುತ್ತಿರಲು ಖತಿಗೊಂಡ ಶೂಲಿಗೆ ಕಾಲು ಕಚ್ಚಿಹುದು ॥</span>
+    </span>
+    <span class="stanza-num">॥೬॥</span>
+  </div>
+
+  <div class="stanza">
+    <span class="stanza-lines">
+      <span class="line">ಏನೊ ತರಚಿದೆಯೆಂದು ಕೆಳಗಡೆ</span>
+      <span class="line">ತಾನೆ ಕಳವಳದಲ್ಲೆ ನೋಡಲ-</span>
+      <span class="line">ದೇನೊ ದದ್ದರಿಸಿಹುದು ಎಲೆಗಳ ಮುಟ್ಟಿ ಮೊಣಕಾಲು ।</span>
+      <span class="line">ಏನಿದೇನಿದು ಪೊದೆಯ ತುಂಬಿವೆ</span>
+      <span class="line">ಶಾನೆ ಬಣ್ಣಗಳಲ್ಲಿ ಹೂಗಳು</span>
+      <span class="line">ಸ್ಥಾಣು ಹುಡುಕುತಲಿರುವೆಡೆಯಲೇ ಕಾಲ ತೊಡರಿತ್ತು ॥</span>
+    </span>
+    <span class="stanza-num">॥೭॥</span>
+  </div>
+
+  <div class="stanza">
+    <span class="stanza-lines">
+      <span class="line">ಬಿಲ್ಲೆಯಾ ರೀತಿಯಲಿರುವ ಹೂ-</span>
+      <span class="line">ವಲ್ಲಿ ತುಸುವೂ ಗಂಧ ತೋರದು</span>
+      <span class="line">ಎಲ್ಲಿ ವಿಶ್ವಾಮಿತ್ರ ಸೃಷ್ಟಿಯೊ ಎನುತ ನಂಜುಂಡ ।</span>
+      <span class="line">ಒಳ್ಳಿತಿದುವೋ ಅಲ್ಲವೋ ಎಂ-</span>
+      <span class="line">ದೆಲ್ಲ ಯೋಚಿಸದೇನೆ ತರಚಿದ-</span>
+      <span class="line">ನಲ್ಲ! ಹೂಗಳ ಬುಟ್ಟಿ ತುಂಬಿರೆ ಮನೆಗೆ ಮರಳಿಹನು ॥</span>
+    </span>
+    <span class="stanza-num">॥೮॥</span>
+  </div>
+
+  <div class="stanza">
+    <span class="stanza-lines">
+      <span class="line">ಪಶುಪತಿಯು ಮರಳಿರಲಗಾತ್ಮಜೆ</span>
+      <span class="line">ತುಸುವು ತಡಮಾಡದೆಯೆ ತಬ್ಬಿದ-</span>
+      <span class="line">ಳುಸುರೊಡೆಯನನು! ನೀಡೆ ಮಡದಿಗೆ ಬುಟ್ಟಿ ಹೂ ತುಂಬ ।</span>
+      <span class="line">ಹಸಿರುಗೊಂಡಿಹುದವಳ ಮನ ತಾ</span>
+      <span class="line">ಕುಸುಮಗಳ ಹಲಬಣ್ಣ ಕಂಡಿರೆ</span>
+      <span class="line">ಶಶಿಧರನಿಗೂ ತಕ್ಕ ನೆಮ್ಮದಿಯಲ್ಲೆ ಆಗಿಹುದು ॥</span>
+    </span>
+    <span class="stanza-num">॥೯॥</span>
+  </div>
+
+  <div class="stanza">
+    <span class="stanza-lines">
+      <span class="line">ಮುಡಿದು ಹಿಗ್ಗಿದಳಯ್ಯ ಮಹಿಷನ</span>
+      <span class="line">ಮಡುಹಿದಾಗಿರಿಸುತೆಯು ಗೆಳತಿಯ-</span>
+      <span class="line">ರೊಡನೆ ಕೈಲಾಸಗಿರಿಪುರದಲಿ ದುಂಬಿ ಕಾಡದಿರೆ ।</span>
+      <span class="line">ನುಡಿದಳೋರ್ವಳು ಸಖಿಯು ಹಂಸಿನಿ</span>
+      <span class="line">ಮುಡಿದ ಹೂವಿನ ಹೆಸರದೇನೇ ?</span>
+      <span class="line">ಬೆಡಗು ಮೂಡಿಸುತಿಹುದು ದಿಟದಲ್ಲೆನುತ ಮುದದಲ್ಲಿ ॥</span>
+    </span>
+    <span class="stanza-num">॥೧೦॥</span>
+  </div>
+
+  <div class="stanza">
+    <span class="stanza-lines">
+      <span class="line">ಅಯ್ಯೊ! ಕೇಳದೆ ಹೋದೆ ಹೆಸರನು</span>
+      <span class="line">ಸುಯ್ಯನೇ ನಡೆದೀಗ ಸರ್ವ-</span>
+      <span class="line">ಜ್ಞಯ್ಯನನು ಕಾಣುತ್ತ ಹೆಸರನು ತಿಳಿದು ಬಾ ನೀನು ॥</span>
+      <span class="line">ಒಯ್ಯುತಿರೆ ಸಂದೇಶವನು ಸಖಿ</span>
+      <span class="line">ಮೆಯ್ಯುತಿಹ ನಂದಿಯನು ಕಂಡಳು</span>
+      <span class="line">ಅಯ್ಯ ವಿಶ್ವೇಶ್ವರಗೆ ಸಂದೇಶವನು ಕಳುಹಿದಳು ॥</span>
+    </span>
+    <span class="stanza-num">॥೧೧॥</span>
+  </div>
+
+  <div class="stanza">
+    <span class="stanza-lines">
+      <span class="line">ನಂದಿ ನರ್ತನಶಾಲೆಯೊಳು ತಾ</span>
+      <span class="line">ಬಂದು ಕಾಮಾರಿಯನು ಕೇಳಲು</span>
+      <span class="line">ಒಂದು ಕಾಲನ್ನೆತ್ತಿರುವ ನಟರಾಜ ರೂಪದಲಿ</span>
+      <span class="line">ಇಂದುವದನೆ ಭವಾನಿ ಪ್ರಶ್ನೆಗೆ</span>
+      <span class="line">ಚಂದದಲ್ಲುತ್ತರಿಸಲಿಕೆ ಭವ</span>
+      <span class="line">ನಿಂದ ರೂಪವು ತಾನೆ ಜಗಕಾನಂದತಾಂಡವವು ॥</span>
+    </span>
+    <span class="stanza-num">॥೧೨॥</span>
+  </div>
+
+  <div class="stanza">
+    <span class="stanza-lines">
+      <span class="line">ನಿಂತ ನಿಲುವಲೆ ಯೋಚಿಸುತ್ತಿಹ-</span>
+      <span class="line">ನಂತಲೋಕವ ಜಟೆಯಲೊಳಗೊ-</span>
+      <span class="line">ಳ್ವಂತ ಶಂಕರ ಜಗಕೆ ಮಂಗಳ ತರುವ ಗಿರಿವಾಸಿ ।</span>
+      <span class="line">ಎಂತೊ ಮಾಡಲು ಹೊರಡೆ ಮತ್ತಿ-</span>
+      <span class="line">ನ್ನೆಂತೊ ವಿಧಿಯಿರೆ ಬಾಳ್ವುದೆಂತೈ?</span>
+      <span class="line">ಚಿಂತೆಯಿರದಿಹ ಗಂಡನೆಲ್ಲಿಹನೆಂದು ನಸುನಕ್ಕ ॥</span>
+    </span>
+    <span class="stanza-num">॥೧೩॥</span>
+  </div>
+
+  <div class="stanza">
+    <span class="stanza-lines">
+      <span class="line">ಆಗ ಕಾಲ್ಗಳು ತರಚಿದಾಗಲೆ</span>
+      <span class="line">ಹೂಗಳವು ದೊರಕಿದ್ದವಲ್ಲವೆ;</span>
+      <span class="line">ಬೇಗ ಹೂಗಳ ತರಚಿ ತಂದೆನು ದುರ್ಗೆಯಾ ಮುಡಿಗೆ</span>
+      <span class="line">ಹಾಗಿರಲು ಸರಿ ತರಚಿ ಹೂವೆಂ-</span>
+      <span class="line">ದೀಗ ಜಗದಲಿ ಹೆಸರುಗೊಳ್ಳಲಿ;</span>
+      <span class="line">ಹೋಗಿ ಬೇಗನೆ ತಿಳಿಸು ನಂದಿಯೆ ಉಮೆಯ ಕಿವಿಯಲ್ಲಿ ॥</span>
+    </span>
+    <span class="stanza-num">॥೧೪॥</span>
+  </div>
+
+  <div class="stanza">
+    <span class="stanza-lines">
+      <span class="line">ಹೂವ ಹೆಸರನು ಕೇಳಿ ಪಾರ್ವತಿ</span>
+      <span class="line">ಭಾವಿಸುತ ಜಡೆಬಿಲ್ಲೆಯೆನುತಲಿ</span>
+      <span class="line">ಹಾವಿನಂತಹ ನೀಳಜಡೆಯಲ್ಲಿಟ್ಟು ನಲಿದಿರಲು</span>
+      <span class="line">ಸೇವಿಸುವ ಕೆಳದಿಯರು ಜೊತೆಯಲಿ</span>
+      <span class="line">ತಾವು ಹೂಗಳ ಮುಡಿದಪರ್ಣೆಯ</span>
+      <span class="line">ತಾವಿನಲಿ ಹರಡಿತ್ತು ಹೂನಗೆಹೊಳೆಯು ನೆರೆದುಂಬಿ ॥</span>
+    </span>
+    <span class="stanza-num">॥೧೫॥</span>
+  </div>
+
+  <div class="stanza">
+    <span class="stanza-lines">
+      <span class="line">ಹಿಂದೆಯೀ ಕಥೆ ಹೇಳಿ ಹಂಸಾ-</span>
+      <span class="line">ನಂದಿ ಕನ್ನಡ ಗದ್ಯದೊಳಗಿರೆ</span>
+      <span class="line">ಚಂದದಲಿ ಸಂಕೇತಿ ಪದ್ಯದಿ ಬರೆಯೆ ಶ್ರೀಕಾಂತ</span>
+      <span class="line">ಇಂದು ಭಾಮಿನಿ ಸರಳ ಷಟ್ಪದಿ</span>
+      <span class="line">ಹೊಂದುವುದು ಕನ್ನಡದ ನುಡಿಗೆನೆ</span>
+      <span class="line">ತಂದೆ ನಿಮಗಾನಂದ ತರಲಿಕೆ ಓದಿ ಹಾರಯಿಸಿ ॥</span>
+    </span>
+    <span class="stanza-num">॥೧೬॥</span>
+  </div>
+
+</div>
+
+<div class="colophon">ರಾಮಪ್ರಸಾದ್ ಕೆ.ವಿ. &nbsp;(@hamsanandi)</div>
+
+<hr class="section-divider">
+<footer>Hosted on GitHub Pages</footer>
+
+</body>
+</html>
