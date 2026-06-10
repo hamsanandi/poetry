@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="kn" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ಸೀನಪ್ಪನ ನಾಲ್ಕು — Hamsanandi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+Kannada:wght@400;600&family=Noto+Serif+Kannada:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --gold: #8b5e1a; --gold-light: #6b4510; --gold-dim: #a0783a;
+  --bg: #ffffff; --section-bg: #fdf9f3; --header-bg: #f5ede0;
+  --border: #d4c5a9; --border-light: #c0aa88;
+  --text: #1a1208; --meta: #8a7055;
+}
+
+body {
+  font-family: 'EB Garamond', serif;
+  background: var(--bg); color: var(--text);
+  max-width: 860px; margin: 0 auto;
+  padding: 0 0 60px; font-size: 16px; line-height: 1.6;
+}
+
+/* ── Top nav bar ── */
+.site-nav { background: var(--header-bg); border-bottom: 1px solid var(--border); padding: 0 20px; display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 42px; position: sticky; top: 0; z-index: 100; }
+.nav-home { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.2em; color: var(--gold); text-decoration: none; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; }
+.nav-home.kn { font-family: 'Noto Serif Kannada', serif; letter-spacing: 0.05em; text-transform: none; font-size: 0.88rem; }
+.nav-home:hover { text-decoration: underline; }
+.nav-links { display: flex; align-items: center; gap: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-link { font-family: 'EB Garamond', serif; font-size: 0.78rem; color: var(--meta); text-decoration: none; padding: 0 10px; line-height: 42px; white-space: nowrap; border-left: 1px solid var(--border); transition: color 0.15s, background 0.15s; }
+.nav-link:first-child { border-left: none; }
+.nav-link:hover { color: var(--gold); background: rgba(139,94,26,0.06); }
+.nav-link.active-section { color: var(--gold); font-weight: 600; }
+.nav-link.kn { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.72rem; }
+
+/* ── Page header ── */
+.page-header {
+  text-align: center; padding: 36px 20px 28px;
+  border-bottom: 1px solid var(--border); position: relative; margin-bottom: 32px;
+}
+.page-header::after {
+  content: ''; display: block; height: 2px; width: 120px; margin: 0 auto;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%);
+}
+.poem-title {
+  font-family: 'Noto Serif Kannada', serif; font-size: 2rem;
+  color: var(--gold-light); font-weight: 600; margin-bottom: 4px;
+}
+.poem-roman {
+  font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--gold-dim); margin-bottom: 14px; display: block;
+}
+.poem-meta {
+  font-family: 'EB Garamond', serif; font-size: 0.92rem;
+  color: var(--meta); font-style: italic; line-height: 1.7;
+}
+.poem-meta .sep { color: var(--border-light); margin: 0 8px; }
+
+/* ── Poem body ── */
+.poem-wrap {
+  max-width: 620px; margin: 0 auto; padding: 0 20px 40px;
+}
+
+.stanza {
+  margin-bottom: 2rem;
+  padding: 18px 22px;
+  background: var(--section-bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: 2px;
+}
+.stanza-lines {
+  font-family: 'Noto Serif Kannada', serif;
+  font-size: 1.08rem; line-height: 2;
+  color: var(--text);
+}
+.stanza-lines .line { display: block; }
+.stanza-num {
+  display: block; text-align: right;
+  font-family: 'Noto Serif Kannada', serif;
+  font-size: 0.82rem; color: var(--gold-dim);
+  margin-top: 8px; padding-top: 6px;
+  border-top: 1px dashed var(--border);
+}
+
+/* ── Image ── */
+.image-wrap {
+  max-width: 620px; margin: 0 auto 28px; padding: 0 20px;
+  text-align: center;
+}
+.poem-image {
+  max-width: 100%; border-radius: 6px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+
+/* ── Prose summary ── */
+.summary-wrap {
+  max-width: 620px; margin: 0 auto 28px; padding: 0 20px;
+}
+.summary-heading {
+  font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+}
+.summary-body {
+  font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.92rem;
+  line-height: 1.9; color: var(--text);
+  padding: 18px 22px; background: var(--section-bg);
+  border: 1px solid var(--border); border-left: 3px solid var(--gold-dim);
+  border-radius: 2px;
+}
+.summary-body p { margin-bottom: 0.8em; }
+.summary-body p:last-child { margin-bottom: 0; }
+
+/* ── Notes section ── */
+.notes-wrap {
+  max-width: 620px; margin: 0 auto 24px; padding: 0 20px;
+}
+.notes-heading {
+  font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+}
+.notes-body {
+  font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.88rem;
+  line-height: 1.9; color: var(--meta);
+  padding: 16px 20px; background: var(--section-bg);
+  border: 1px solid var(--border); border-left: 3px solid var(--border-light);
+  border-radius: 2px;
+}
+.notes-body em { font-style: italic; color: var(--text); }
+.notes-body a { color: var(--gold-dim); text-decoration: none; }
+.notes-body a:hover { color: var(--gold); text-decoration: underline; }
+
+/* ── Colophon ── */
+.colophon {
+  text-align: right; padding: 0 20px;
+  font-family: 'EB Garamond', serif; font-style: italic;
+  font-size: 0.85rem; color: var(--meta); opacity: 0.85;
+  margin-top: 8px;
+}
+
+/* ── Footer ── */
+.section-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 48px 20px 0; }
+footer { text-align: center; color: var(--meta); margin-top: 24px; font-size: 0.82em; }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .poem-title { font-size: 1.5rem; }
+  .stanza { padding: 14px 16px; }
+  .stanza-lines { font-size: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site navigation">
+  <a class="nav-home kn" href="https://hamsanandi.github.io/">ಹಂಸಾನಂದಿ</a>
+  <div class="nav-links">
+    <a class="nav-link kn" href="https://hamsanandi.github.io/compositions/">ರಚನೆಗಳು</a>
+    <a class="nav-link kn" href="https://hamsanandi.github.io/articles/">ಲೇಖನಗಳು</a>
+    <a class="nav-link kn" href="https://hamsanandi.github.io/books/">ಪುಸ್ತಕಗಳು</a>
+    <a class="nav-link kn active-section" href="https://hamsanandi.github.io/poetry/">ಛಂದೋಬದ್ಧ ಕಾವ್ಯ</a>
+    <a class="nav-link kn" href="https://hamsanandi.github.io/stage-productions/">ರಂಗಪ್ರಯೋಗಗಳು</a>
+    <a class="nav-link kn" href="https://hamsanandi.github.io/gamaka-vachana/">ಗಮಕ ವಾಚನ</a>
+    <a class="nav-link kn" href="https://hamsanandi.github.io/translations/">ಅನುವಾದಗಳು</a>
+    <a class="nav-link kn" href="https://hamsanandi.github.io/reviews/">ವಿಮರ್ಶೆಗಳು</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <h1 class="poem-title">ಸೀನಪ್ಪನ ನಾಲ್ಕು</h1>
+  <span class="poem-roman">Sīnappana Nālku</span>
+  <div class="poem-meta">
+    <span>ಭಾಮಿನಿ ಷಟ್ಪದಿ</span>
+    <span class="sep">·</span>
+    <span>೪ ಪದ್ಯಗಳು</span>
+    <span class="sep">·</span>
+    <span>ರಾಮಪ್ರಸಾದ್ ಕೆ.ವಿ.</span>
+  </div>
+</div>
+
+<div class="poem-wrap">
+
+  <div class="stanza">
+    <span class="stanza-lines">
+      <span class="line">ಕಣ್ಣಮುಚ್ಚಿಹ ಬೆನ್ನಡುಬ್ಬನು</span>
+      <span class="line">ಮಣ್ಣನೆತ್ತುತ ಕಂಬವೊಡೆದವ</span>
+      <span class="line">ಸಣ್ಣ ರೂಪದಿ ಬಿಕ್ಕೆಗೈತಂದವನು ನೀನೆನಲೆ?</span>
+      <span class="line">ಚಣ್ಡಗೊಡಲಿಯ ಹಿಡಿದು ಲಂಕೆಯ</span>
+      <span class="line">ಮಣ್ಣುಗೊಳಿಸಿದ ಕೊಳಲಗೋವಳ</span>
+      <span class="line">ಚಿಣ್ಣ ಮನೆಯನು ತೊರೆಯುತಾ ಬಿಳಿ</span>
+      <span class="line">ಬಣ್ಣಗುದುರೆಯನೇರಿ ಲೋಕವ ಕಾಯ್ದೆ ನೀನೆನಲೆ?</span>
+    </span>
+    <span class="stanza-num">॥೧॥</span>
+  </div>
+
+  <div class="stanza">
+    <span class="stanza-lines">
+      <span class="line">ರಂಗನೆನ್ನಲೆ? ಘೋರತರ ನರ</span>
+      <span class="line">ಸಿಂಗನೆನ್ನಲೆ? ಆದಿಶೇಷ ಭು-</span>
+      <span class="line">ಜಂಗನಾ ಮೇಲ್ಪವಡಿಸಿದ ಶ್ರೀಹರಿಯು ನೀನೆನಲೆ?</span>
+      <span class="line">ಮಂಗಗಳ ಗೆಳೆಯನೆನಲೇ? ಭವ</span>
+      <span class="line">ಭಂಗನೆನಲೇ? ಸಕಲದೇವೋ-</span>
+      <span class="line">ತ್ತುಂಗನೆನಲೇ? ಮಂಗಳಾಂಗನು ನೀನು ಎಂದೆನಲೇ?</span>
+    </span>
+    <span class="stanza-num">॥೨॥</span>
+  </div>
+
+  <div class="stanza">
+    <span class="stanza-lines">
+      <span class="line">ಚೋರನೆನ್ನಲೆ? ಗೋಪಕುವರೀ-</span>
+      <span class="line">ಜಾರನೆನ್ನಲೆ? ನೆನೆವ ಭಕ್ತೋ-</span>
+      <span class="line">ದ್ಧಾರನೆನ್ನಲೆ? ಪಂಚಪಾಂಡವರರಸಿ ಕರೆದಿರಲು</span>
+      <span class="line">ಸೀರೆಯಿತ್ತವನೆನಲೆ? ಮಡುಹಲು</span>
+      <span class="line">ವೈರಿ ಬಂದಿರಲೂರ ತೊರೆಯುತ</span>
+      <span class="line">ದೂರದೇಶಕ್ಕೋಡಿದಂತಹ ವೀರ ನೀನೆನಲೆ?</span>
+    </span>
+    <span class="stanza-num">॥೩॥</span>
+  </div>
+
+  <div class="stanza">
+    <span class="stanza-lines">
+      <span class="line">ತಿಮ್ಮನೆನ್ನಲೆ? ಸೀನನೆನ್ನಲೆ?</span>
+      <span class="line">ಸುಮ್ಮನೇ ಬರಿ ಕರಿಯನೆನ್ನಲೆ?</span>
+      <span class="line">ಒಮ್ಮನಸಿನಲಿ ಸಾಲತೀರಿಸಲಾರದವನೆನಲೆ?</span>
+      <span class="line">ಬಿಮ್ಮನಸಿಯಾಗದದೆಯೆ ಪಡೆದನು</span>
+      <span class="line">ಬೊಮ್ಮನನು ಹೊಕ್ಕಳಲಿ! ಕಾಯಲಿ-</span>
+      <span class="line">ಕೆಮ್ಮನೆನುತಲಿ ಸಾಸಿರದ ನಾಮದಲಿ ಕರೆಯುವೆನು ॥</span>
+    </span>
+    <span class="stanza-num">॥೪॥</span>
+  </div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     IMAGE — place balaji.jpg in the same folder as this file
+     ══════════════════════════════════════════════════════ -->
+<div class="image-wrap">
+  <img src="balaji.jpg" alt="Balaji" class="poem-image"
+       onerror="this.parentElement.style.display='none';">
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PROSE SUMMARY — replace the placeholder text below
+     with your Kannada or English prose summary.
+     You can use plain text or simple <p> tags inside
+     the .summary-body div.
+     ══════════════════════════════════════════════════════ -->
+<div class="summary-wrap">
+  <div class="summary-heading">ಸಾರಾಂಶ / Summary</div>
+  <div class="summary-body">
+    <!-- ADD YOUR PROSE SUMMARY HERE -->
+    <!-- Example:
+    <p>ಸೀನಪ್ಪನ ನಾಲ್ಕು ಪದ್ಯಗಳಲ್ಲಿ ...</p>
+    <p>In these four stanzas ...</p>
+    -->
+    <p style="color:var(--border-light);font-style:italic;">[ ಇಲ್ಲಿ ಗದ್ಯ ಸಾರಾಂಶವನ್ನು ಸೇರಿಸಿ / Add prose summary here ]</p>
+  </div>
+</div>
+
+<div class="colophon">ರಾಮಪ್ರಸಾದ್ ಕೆ.ವಿ. &nbsp;(@hamsanandi)</div>
+
+<hr class="section-divider">
+<footer>Hosted on GitHub Pages</footer>
+
+</body>
+</html>
